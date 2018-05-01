@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>한글 웹폰트 클라우드</title>
+    <!--
+        1) 웹폰트 css를 link로
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/hanna.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/jejugothic.css" />
+    <style>
+        /*
+            import는 여기에
+            @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+        */
+        #hanna{
+            font-family: 'Hanna', sans-serif; /* 폰트(패밀리) 지정 */
+            font-weight: normal; /* 폰트 두께 지정 */
+            color:skyblue;
+        }
+        #jeju{
+            font-family: 'Jeju Gothic', sans-serif;
+            color:pink;
+            font-size:40px;
+            text-shadow: 0 0 1px #424242;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="hanna">자바기반의 빅데이터 머신러닝 SW 개발자 과정</h1>
+    <h1 id="jeju">자바기반의 빅데이터 머신러닝 SW 개발자 과정</h1>
+</body>
+</html>

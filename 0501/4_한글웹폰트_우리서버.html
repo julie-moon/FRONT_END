@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>우리 서버에 있는 웹 폰트 적용</title>
+    <link rel="stylesheet" href="css/kakao.css">
+    <link rel="stylesheet" href="css/notosanskr.css">
+    <style>
+        /*
+            폰트는 여러 개를 써줌
+
+            전부 없을 경우를 대비하여 대표 패밀리를 적용함(제일 마지막에)
+
+            1) serif : 삐침이 있는 폰트
+            2) sans-serif : 삐침이 없는 폰트
+            3) monospace : 타자기체
+            4) cursive : 필기체
+            5) fantasy : 한글에는 없음
+        */
+        .kakao{
+            font-family: 'kakao', sans-serif;
+            color: pink;
+        }
+        .light{
+            font-weight: 200;
+        }
+        .regular{
+            font-weight: 500;
+        }
+        .bold{
+            font-weight: 900;
+        }
+
+        .noto_sans{
+            font-family: 'Noto Sans KR', sans-serif;
+            color:skyblue;
+        }
+        .b1{
+            font-weight: 100;
+        }
+        .b2{
+            font-weight: 200;
+        }
+        .b3{
+            font-weight: 300;
+        }
+        .b4{
+            font-weight: 400;
+        }
+        .b5{
+            font-weight: 500;
+        }
+        .b6{
+            font-weight: 700;
+        }
+        .b7{
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        id 규칙과 class 규칙을 정함
+        (코딩 컨벤션을 수행)
+
+        id는 낙타 표기법(camel case)
+        class는 언더바(_) 표기법
+
+        class는 한 페이지에 중복, 한 요소에 중첩 가능
+    -->
+    <h1 class="kakao light">자바 기반의 빅데이터 머신러닝 SW 개발자 과정</h1>
+    <h1 class="kakao regular">자바 기반의 빅데이터 머신러닝 SW 개발자 과정</h1>
+    <h1 class="kakao bold">자바 기반의 빅데이터 머신러닝 SW 개발자 과정</h1>
+    <hr /> <!-- hr : horizontal line의 줄임말(contents를 나눌 때 사용) -->
+    <h1 class="b1 noto_sans">자바 기반의 빅데이터 머신러닝 SW 개발자 과정</h1>
+    <h1 class="b2 noto_sans">자바 기반의 빅데이터 머신러닝 SW 개발자 과정</h1>
+    <h1 class="b3 noto_sans">자바 기반의 빅데이터 머신러닝 SW 개발자 과정</h1>
+    <h1 class="b4 noto_sans">자바 기반의 빅데이터 머신러닝 SW 개발자 과정</h1>
+    <h1 class="b5 noto_sans">자바 기반의 빅데이터 머신러닝 SW 개발자 과정</h1>
+    <h1 class="b6 noto_sans">자바 기반의 빅데이터 머신러닝 SW 개발자 과정</h1>
+    <h1 class="b7 noto_sans">자바 기반의 빅데이터 머신러닝 SW 개발자 과정</h1>
+</body>
+</html>
