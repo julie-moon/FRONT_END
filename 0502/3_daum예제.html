@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>다음사이트</title>
+</head>
+<body>
+    <!--
+        HTML : Hyper Text Markup Language
+
+        1) HyperText : 하이퍼링크(순차적이 아닌 접근)
+        2) Markup : 글자를 묶는 것(태그 : 요소)
+
+        마크업 시 의미와 구조에 맞게
+    -->
+    <h1>
+        <a href="https://www.daum.net">
+            <img src="img/daum_logo.png" width="100" alt="다음" />
+        </a>
+    </h1>
+    <h2>검색</h2>
+    <!--
+        유저의 정보를 서버로 넘길 때 필요한 요소 : form
+        form의 속성 : action(주소) / method(GET, POST, PUT, DELETE...)
+        폼의 입력 필드를 묶는 fieldset / fieldset의 제목을 의미하는 legend
+        데이터 : 파라미터(이름(name)과 값(value)으로 구성)
+    -->
+    <form action="http://search.daum.net/search" method="get">
+        <fieldset>
+            <legend>통합 검색</legend>
+            <input type="text" size="55" name="q" placeholder="검색어 입력" />
+            <button>검색</button>
+        </fieldset>
+    </form>
+    <a href="">서제스트란?</a>
+    <h3>인기 검색어</h3>
+    <ul>
+        <li><a href="">문재인 미국</a></li>
+        <li><a href="">이찬혁 입대</a></li>
+        <li><a href="">추신수 안타</a></li>
+        <li><a href="">철도의 날</a></li>
+        <li><a href="">유소연 메이저어워드</a></li>
+    </ul>
+    <ul>
+        <li><a href="">류현진 등판</a></li>
+        <li><a href="">이지혜 결혼</a></li>
+        <li><a href="">추석 음식비용</a></li>
+        <li><a href="">아이유 리메이크</a></li>
+        <li><a href="">로또 미수령 당첨금</a></li>
+    </ul>
+    <button>&tl; 이전</button>
+    <button>다음 &gt;</button>
+    <p><a href="">다음을 시작페이지</a></p>
+    <h2>주요 서비스</h2>
+    <ul>
+        <li><a href="">카페</a></li>
+        <li><a href="">메일</a></li>
+        <li><a href="">뉴스</a></li>
+        <li><a href="">지도</a></li>
+        <li><a href="">증권</a></li>
+        <li><a href="">쇼핑</a></li>
+        <li><a href="">카카오TV</a></li>
+        <li><a href="">웹툰</a></li>
+        <li><a href="">블로그</a></li>
+        <li><a href="">브런치</a></li>
+        <li><a href="">사전</a></li>
+        <li><a href="">게임</a></li>
+        <li><a href="">별플레이</a></li>
+        <li><a href="">같이가치</a></li>
+    </ul>
+    <a href="">주요서비스</a>
+    &nbsp;
+    <a href="">더보기</a>
+    <h2>전체 서비스</h2>
+    <dl>
+        <dt>커뮤니케이션</dt>
+        <dd><a href="">카페</a></dd>
+        <dd><a href="">메일</a></dd>
+        <dd><a href="">블로그</a></dd>
+        <dd><a href="">티스토리</a></dd>
+        <dd><a href="">브런치</a></dd>
+    </dl>
+    <dl>
+        <dt>미디어</dt>
+        <dd><a href="">뉴스</a></dd>
+        <dd><a href="">연예</a></dd>
+        <dd><a href="">스포츠</a></dd>
+        <dd><a href="">라이프</a></dd>
+        <dd><a href="">아고라</a></dd>
+    </dl>
+    <h2>오늘의 정보</h2>
+    <h3>09.18. (월)</h3>
+    <!--
+        강조 : em(강조), strong(더 강한 강조)
+
+        엔티티
+        1) &lt : <
+        2) &gt : >
+        3) &deg :
+        4) &copy : copyright
+    -->
+    <ul>
+        <li><a href="">날씨 서울시 <strong>맑음</strong>  <em>영상 26도</em> 26&deg</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>css 애니메이션</title>
+    <link rel="shortcut icon" href="android-icon-96x96.png" />
+    <style type="text/css">
+        /*
+            인라인 수평 가운데 정렬
+            : 부모 요소에 글자 가운데 정렬
+        */
+        body {
+            text-align: center;
+            padding-top:250px;
+        }
+        /* bounce라는 이름의 키프레임 생성 */
+        @keyframes bounce {
+            from{transform:scale(1)}
+            to{transform:scale(2)}
+        }
+        /* css의 애니메이션 
+            
+           1) keyframes : 프레임 설정
+           2) animation 속성 : 키프레임이름 시간 횟수 가속도
+        */
+        img{
+            width:200px;
+            animation:bounce 1s 1 ease;
+        }
+        /* 마우스 오버 시 가상 클래스 선택자 */
+        img:hover{
+
+    }
+</style>
+</head>
+<body>
+    <img src="img/heart.png" alt="심장" />
+</body>
+</html>

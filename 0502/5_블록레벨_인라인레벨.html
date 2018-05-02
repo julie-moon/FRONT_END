@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>블록레벨과 인라인레벨</title>
+    <style>
+        div{
+            background:pink;
+            /* div는 블록레벨이기 때문에 width, height 적용됨 */
+            display: inline;
+            width:200px;
+            height:200px;
+        }
+        span{
+            /* div는 인라인레벨이기 때문에 width, height 적용 안됨 */
+            background:skyblue;
+            /* css에서는 블록, 인라인을 display 속성으로 변경 */
+            display: block;
+            width:200px;
+            height:200px;
+        }
+        /* command + / : 자동 주석처리 */
+    </style>
+</head>
+<body>
+    <!--
+        블록레벨
+        1) 컨테이너(레이아웃을 담당)
+        2) 줄바꿈이 일어남
+        3) 크기(width, height)를 가짐
+        4) h1~h6, p, ol, ul... div(division)
+    -->
+    <h1>블록레벨</h1>
+    <p>블록레벨</p>
+    <dl>
+        <dt>블록레벨</dt>
+        <dd>블록레벨</dd>
+    </dl>
+    <div>블록레벨</div>
+    <hr />
+    <!--
+        인라인레벨
+        1) 콘텐츠(내용)
+        2) 줄바꿈이 일어나지 않고 하나의 라인에
+        3) 크기(width, height)가 없음(단, 대체되는 요소는 예외)
+        4) em, strong, code, i, (input, img, select, textarea... 대체되는 요소들이 인라인) span(대표적인 인라인레벨)
+    -->
+    <span>인라인레벨</span>
+    <em>인라인레벨</em>
+    <strong>인라인레벨</strong>
+    <a href="">인라인레벨</a>
+    <input />
+    <select></select>
+    <textarea></textarea>
+    <img src="img/purin.png" alt="푸린" width="100px" />
+</body>
+</html>
