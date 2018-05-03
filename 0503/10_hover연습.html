@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가상 클래스 연습</title>
+    <style type="text/css">
+        #box{
+            width:100px;
+            height:50px;
+            background-color:pink;
+            text-align:center; /* 글자의 수평 가운데 정렬 */
+            line-height:50px; /* 글자의 수직 가운데 정렬(한 줄일 때만 가능함) : height와 line-height 값을 같게 적용 */
+            transition: .2s cubic-bezier(.09,.69,1,.41);
+        }
+        #box:hover{
+            color:#fff;
+            background-color: deeppink;
+            height:80px;
+            line-height:80px;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+        /*
+            transition: 속성 값 A에서 B로(숫자값) 변할 때 부드럽게 처리하는 속성
+            transition 시간 가속도키워드
+        */
+    </style>
+</head>
+<body>
+    <div id="box">바나나라떼</div>
+</body>
+</html>

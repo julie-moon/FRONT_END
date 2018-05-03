@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가상 클래스 선택자</title>
+    <style type="text/css">
+        /*
+            :link(가지 않았던 링크)
+            :visited(갔던 링크)
+            :hover(마우스 오버 시)
+            :active(클릭하는 동안)
+            :focus(포커스가 맞아질 )
+        */
+        a:link{
+            color:pink;
+        }
+        a:visited{
+            color:skyblue;
+        }
+        a:hover{
+            color:deeppink;
+        }
+        a:active{
+            color:deepskyblue;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        a 요소가 원래 파란색인 이유 : 브라우저가 가진 기본 css
+
+        1) 가상 클래스 선택자 : ':'
+        2) 가상 요소 선택자 : '::'
+    -->
+    <h1>가상 클래스 선택자</h1>
+    <a href="http://www.naver.com">네이버</a>
+</body>
+</html>
