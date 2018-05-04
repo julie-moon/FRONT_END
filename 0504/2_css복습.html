@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>css복습</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" />
+    <style type="text/css">
+        body{
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        #box{
+            width:300px;
+            height:100px;
+            background-color: skyblue;
+            text-align:center;
+            line-height:100px;
+            text-decoration:none;
+            font-size:30px;
+            color:#0288D1;
+            transition: .2s ease;
+            /*
+                cursor 지정
+                1) pointer : 손모양
+                2)
+            */
+            cursor:pointer;
+        }
+        #box:hover{
+            background-color:deepskyblue;
+            color:#fff;
+            font-weight:700;
+            transform: scale(1.2);
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+        #profile{
+            width:150px;
+            height:150px;
+            border:5px solid #424242;
+            border-radius:80px; /* border는 박스모델이므로 border-radius값을 줄 때 (width + border*2)/2 해줘야 함 */
+            /*background-color:skyblue;*/
+            background-image:url(img/profile.jpg);
+            /*
+                background-size : CSS3 추가된 내용
+                1) px 지정
+                2) % 지정
+                3) cover, contain 지정(요소 비율, 이미지 비율)
+            */
+            background-size:100% 100%;
+            background-repeat:no-repeat;
+            /*
+                border : 테두리 선
+                border-color : 색상
+                border-width : 너비
+                border-style : 스타일(solid, dotted, dashed...)
+            */
+            opacity: .5;
+            transition: .2s ease;
+        }
+        #profile:hover{
+            border: 5px solid skyblue;
+            opacity: 1;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+</head>
+<body>
+    <h1><i class="fa fa-comment"></i> 복습목록</h1>
+    <ol>
+      <li><i class="fa fa-battery-empty"></i> 폰트어썸</li>
+      <li><i class="fa fa-battery-quarter"></i> Noto Sans KR 폰트 적용</li>
+      <li><i class="fa fa-battery-half"></i> #box에 가상 클래스 적용</li>
+      <li><i class="fa fa-battery-three-quarters"></i> #profile에 background 적용</li>
+    </ol>
+    <hr />
+    <div id="box">CSS복습1</div>
+    <hr />
+    <div id="profile"></div>
+</body>
+</html>

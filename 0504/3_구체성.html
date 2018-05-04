@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>구체성</title>
+    <style type="text/css">
+        body{ /* 0 0 0 1 */
+            /*
+                글자 : 상속됨
+                뒷 배경, 박스 모델 : 상속 안됨
+            */
+            color:pink;
+        }
+        h1{ /* 0 0 0 1 */
+            color:skyblue;
+        }
+        .h1{ /* 0 0 1 0 */
+            color:lightseagreen;
+        }
+        #h1{ /* 0 1 0 0 */
+            color:cornflowerblue;
+        }
+        /*
+            구체성
+            한 요소를 두 개 이상의 선택자가 선택하여
+            한 개의 속성의 값을 두 개 이상 다르게 선언하였을 때
+            무슨 속성 값이 적용되는지 판단하는 성질
+
+            표현
+            (인라인)  (id)  (class)  (요소)
+               0      0      0       0
+        */
+    </style>
+</head>
+<body>
+    <h1 id="h1" class="h1">나는 무슨색?</h1>
+</body>
+</html>
