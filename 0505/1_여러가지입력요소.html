@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>여러가지 입력 요소</title>
+</head>
+<body>
+    <h1>여러가지 입력 요소</h1>
+    <form action="" method="post">
+        <h2><label for="txt">글자 입력</label></h2>
+        <input type="text" name="txt" id="txt" placeholder="글자 입력" />
+        <h2><label for="pwd">비밀번호 입력</label></h2>
+        <input type="password" name="pwd" id="pwd" placeholder="비밀번호" />
+        <h2>정보 중에 한 개만 입력 가능 : radio</h2>
+        <input type="radio" name="gender" value="f" />&nbsp;여자
+        <input type="radio" name="gender" value="m" />&nbsp;남자
+        <h2>정보 여러 개 선택 가능</h2>
+        <input type="checkbox" name="hobby" value="playingGames" />&nbsp;게&nbsp;&nbsp;임
+        <input type="checkbox" name="hobby" value="readingBooks" />&nbsp;독&nbsp;&nbsp;서
+        <input type="checkbox" name="hobby" value="listeningToMusic" />&nbsp;음악감상
+        <h2>선택</h2>
+        <select name="year">
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+        </select>
+        <h2>한 줄 이상 기입하는 : textarea</h2>
+        <textarea placeholder="멤버들에게 전할 소식"></textarea>
+        <h2>파일 선택 : file</h2>
+        <input type="file" />
+        <br />
+        <button>회원가입</button>
+    </form>
+</body>
+</html>

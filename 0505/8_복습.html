@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>0921복습</title>
+    <style type="text/css">
+        #tab{
+            width:200px;
+            height:40px;
+            background-color:skyblue;
+            border-radius:10px 10px 0 0;
+            border-top:2px solid cornflowerblue;
+            border-right:2px solid cornflowerblue;
+            border-left:2px solid cornflowerblue;
+            font-size:20px;
+            text-align:center;
+            line-height:40px;
+
+        }
+        #tabcontent{
+            width:400px;
+            height:160px;
+            background-color:cornflowerblue;
+            border: 2px solid darkblue;
+            border-radius:0 15px 0 0;
+            text-align:left;
+            padding:20px;
+            position:relative;
+        }
+        #image{
+            /*background-color:pink;*/
+            position:absolute;
+            left:15px;
+            bottom:10px;
+        }
+        #image img{
+            width:100px;
+        }
+        #triangle1{
+            width:0;
+            height:0;
+            border-left:75px solid transparent;
+            border-bottom:100px solid skyblue;
+        }
+        #triangle2{
+            width:0;
+            height:0;
+            border-right:75px solid transparent;
+            border-bottom:100px solid skyblue;
+        }
+        #tri{
+            width:0;
+            height:0;
+            border-top:100px solid transparent;
+            border-right:80px solid transparent;
+            border-bottom:100px solid deepskyblue;
+            border-left:80px solid transparent;
+        }
+        #profileFrame{
+            width:200px;
+            height:240px;
+            border:5px solid #424242;
+            background-color:#FFF;
+            text-align:center;
+            font-size:20px;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin-left:-105px;
+            margin-top:-125px;
+        }
+        #profileFrame a{
+            text-decoration:none;
+        }
+        #pic{
+            width:150px;
+            height:150px;
+            margin:20px;
+            border:5px solid #424242;
+            border-radius:80px;
+            /*background-color:skyblue;*/
+            background-image:url(img/irene.jpeg);
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
+        #tmonChar{
+            position:absolute;
+            right:20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>복습</h1>
+    <h2>탭모양 만들기</h2>
+    <div id="tab">탭1</div>
+    <div id="tabcontent">
+        내용이 쭉쭉 들어갑니다
+        <div id="image">
+            <img src="img/002.gif" alt="라이언" />
+        </div>
+    </div>
+    <hr />
+    <h2>삼각형 만들기</h2>
+    <div id="triangle1">
+        <div id="triangle2"></div>
+    </div>
+    <div id="tri"></div>
+    <hr />
+    <h2>프로필 만들기</h2>
+    <div id="profileFrame">
+        <div id="pic">
+        </div>
+        <span><a href="">아이린</a></span>
+    </div>
+    <div id="tmonChar">
+        <img src="img/monster.png" alt="티몬캐릭터" />
+    </div>
+</body>
+</html>

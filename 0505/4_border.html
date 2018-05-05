@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>border</title>
+    <style type="text/css">
+        /*body{direction:rtl}*/
+        body{
+            margin:0;
+        }
+
+        #box{
+            /*
+                width / height의 기본 값은 auto
+                단 width와 height의 auto 작동이 다르다.
+            */
+            width:0px;
+            height:0px;
+            /*background-color:pink;*/
+            border-top:50px solid skyblue;
+            border-right:150px solid transparent;
+            border-bottom:50px solid cornflowerblue;
+            /*border-left:50px solid hotpink;*/
+            position:fixed;
+            left:50%;
+            top:50%;
+            /*
+                margin : 시계 방향(top right bottom left)
+            */
+            margin:-100px 0 0 -100px;
+        }
+    </style>
+</head>
+<body>
+    <!---글자를 씁니다-->
+    <div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>여러가지 입력 요소 복습</title>
+    <style type="text/css">
+        /*
+            textarea 요소는 유저가 크기를 마우스로 변경할 수 있다.
+            그를 막아주는 css 속성은 resize
+
+            대체되는 요소이기 때문에 width, height 지정 가능함
+        */
+        textarea{
+            resize:none;
+        }
+    </style>
+</head>
+<body>
+    <h1>여러가지 입력 요소</h1>
+    <!--
+        form의 필수 속성(attribute)
+        1) action : 파라미터를 넘길 주소
+        2) method : get(기본) / post / (put / delete...)
+    -->
+    <form action="register" method="get">
+        <h2>글자입력</h2>
+        <input type="text" name="id" placeholder="아이디" />
+        <h2>비밀번호 입력</h2>
+        <input type="password" name="pwd" placeholder="비밀번호" />
+        <h2>정보 중에 한 개만 선택 가능 : radio</h2>
+        <!--
+            input type="radio"는
+            name 요소를 같은 이름으로 묶어야 하나가 됨
+        -->
+        <input type="radio" id="female" name="gender" value="F" />&nbsp;<label for="female">여자</label>
+        <input type="radio" id="male" name="gender" value="M" />&nbsp;<label for="male">남자</label>
+        <h2>취미 선택</h2>
+        <input type="checkbox" id="games" name="hobby" value="playingGames" />&nbsp;<label for="games">게&nbsp;&nbsp;임</label>
+        <input type="checkbox" id="books" name="hobby" value="readingBooks" />&nbsp;<label for="books">독&nbsp;&nbsp;서</label>
+        <input type="checkbox" id="music" name="hobby" value="listeningToMusic" />&nbsp;<label for="music">음악감상</label>
+        <h2>생년월일 입력</h2>
+        <select name="year">
+            <option value="2017">2017년</option>
+            <option value="2016">2016년</option>
+            <option value="2015">2015년</option>
+        </select>
+        <h2>당신의 프로필 입력</h2>
+        <!--
+            textarea의 필수 속성
+            rows / cols
+        -->
+        <textarea rows="5" cols="40" name="profile" placeholder="프로필을 입력해 주세요"></textarea>
+        <h2>프사 등록</h2>
+        <input type="file" name="pic" />
+        <!--
+            유저에게는 보여주지 않는 input 이지만
+            서버로는 넘겨야 할 데이터가 있다면
+            input type="hidden"을 사용
+        -->
+        <input type="hidden" name="no" value="3" />
+        <p>
+            <!--
+                버튼 타입
+                1) submit : 폼에 있을 때 기본
+                2) button : 일반적인 버튼
+                3) reset : 폼 리셋
+            -->
+            <button type="submit">회원가입</button>
+            <button type="reset">리셋</button>
+        </p>
+    </form>
+</body>
+</html>

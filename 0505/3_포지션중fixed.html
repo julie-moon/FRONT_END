@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>fixed를 이용</title>
+    <style type="text/css">
+        body{
+            height:12287px;
+            background-image:url("img/bg.png");
+        }
+        #lyWrap{
+            /*
+                position을 지정하고
+                left, top, right, bottom 으로 움직임
+
+                position 속성값
+                1) static : 기본값. 움직이지 않음
+                2) relative :
+                3) absolute :
+                4) fixed : 브라우저를 기준으로 고정
+            */
+            width:100%;
+            height:100%;
+            background-color:rgba(0,0,0,.8);
+            /*opacity:.9;*/
+            position:fixed;
+            left:0px;
+            top:0px;
+        }
+        #popup{
+            width:400px;
+            height:200px;
+            background-color:#FFF;
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin-left:-200px;
+            margin-top:-100px;
+            box-shadow: 0 0 20px #FFF;
+        }
+    </style>
+</head>
+<body>
+    <div id="lyWrap"></div>
+    <div id="popup"></div>
+</body>
+</html>

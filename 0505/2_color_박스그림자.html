@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>색상과 박스그림자</title>
+    <style type="text/css">
+        .box{
+            width:200px;
+            height:200px;
+            text-align:center;
+            line-height:200px;
+            color:#fff;
+            font-size:40px;
+            font-weight:bold;
+            text-shadow:0 0 5px #fff;
+            /*text-shadow: 2px 2px 3px #424242;*/
+        }
+        #red{
+            background-color:red;
+            /*
+                color 값
+                1) 키워드(black, white, red, green, blue...)
+                2) #16진수 6자리(0~F) (ex > #000000, #00FF00)
+                3) #16진수 3자리 (ex > #000, #FFF, #F00)
+                4) rgb(0~255, 0~255, 0~255) / rgb(0~100%, 0~100%, 0~100%)
+                5) rgba(0~255, 0~255, 0~255) / rgba(0~100%, 0~100%, 0~100%, 1) // a는 투명도
+            */
+
+        }
+        /*
+            그림자
+            1) box-shadow : 블록레벨요소의 그림자
+            2) text-shadow : 글자의 그림자
+            3) 표현법 : x y blur 색상
+        */
+        #blue{
+            margin-top:-100px;
+            margin-left:100px;
+            /*
+                rgba()를 사용했을 때는 뒷배경만 투명도가 적용되고
+                opacity를 사용했을 때는 뒷배경과 글자 모두 투명도가 적용됨
+            */
+            /*background-color:rgba(0%, 0%, 100%, .5);*/
+            background-color:rgba(0%, 0%, 100%, 1);
+            opacity:.5;
+        }
+        #box{
+            width:100px;
+            height:100px;
+            background-color:#FFF;
+            border:10px solid #424242;
+            text-align:center;
+            /*
+                font 대표 패밀리
+                font-size, font-weight, font-varient, font-family, font-style,
+                line-height도 들어가 있음
+            */
+            font:700 30px/105px '맑은 고딕', sans-serif;
+            /*margin-left:200px;*/
+            /*margin-top:100px;*/
+            text-shadow:2px 2px 2px #424242;
+            box-shadow:-60px -60px 0 yellow,
+                       60px 60px 0 red,
+                       -60px 60px 0 blue,
+                       60px -60px 0 green;
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin-left:-60px;
+            margin-top:-60px;
+        }
+    </style>
+</head>
+<body>
+    <div id="red" class="box">RED</div>
+    <div id="blue" class="box">BLUE</div>
+    <hr />
+    <div id="box">BOX</div>
+</body>
+</html>
