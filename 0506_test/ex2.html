@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>ex2</title>
+		<link rel="shortcut icon" href="img/daum_movie.ico" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/notosanskr.css" />
+		<style type="text/css">
+			body{
+				font-family:'Noto Sans KR', sans-serif;
+			}
+			.poster_img{
+				width:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>영화사이트</h1>
+		<h2>영화검색</h2>
+		<form action="http://movie.daum.net/search/main?returnUrl=http%3A%2F%2Fmovie.daum.net%2Fmain%2Fnew%23slide-1-0&searchText=#searchType=movie&page=1&sortType=acc" method="get">
+			<fieldset>
+				<legend>영화 검색 폼</legend>
+				<label for="search">검색</label>
+				<input type="text" id="search" name="searchText" placeholder="검색할 영화이름" />
+				<button><i class="fa fa-search"></i> 검색</button>
+			</fieldset>
+		</form>
+		<hr />
+		<h2>일일 박스오피스</h2>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>순위</th>
+					<th>포스터</th>
+					<th scope="col">영화명</th>
+					<th>관객수</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<td colspan="4"><a href="http://www.kobis.or.kr/kobis/business/main/main.do" target="_blank">영화진흥위원회 영화관 입장권 통합전산망 제공</a></td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td><img class="poster_img" src="poster/poster1.jpg" alt="아이캔스피크 포스터" /></td>
+					<th scope="row">아이캔스피크</th>
+					<td>118,826명</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td><img class="poster_img" src="poster/poster2.jpg" alt="아이캔스피크 포스터" /></td>
+					<th scope="row">살인자의 기억법</th>
+					<td>2,259,164명</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td><img class="poster_img" src="poster/poster3.jpg" alt="아이캔스피크 포스터" /></td>
+					<th scope="row">베이비 드라이버</th>
+					<td>563,876명</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td><img class="poster_img" src="poster/poster4.jpg" alt="아이캔스피크 포스터" /></td>
+					<th scope="row">아메리칸 메이드</th>
+					<td>344,488명</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td><img class="poster_img" src="poster/poster5.jpg" alt="아이캔스피크 포스터" /></td>
+					<th scope="row">킬러의 보디가드</th>
+					<td>1,541,803명</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ex5</title>
+    <style>
+        @font-face {
+            font-family: 'thomson';
+            font-style: normal;
+            font-weight: 100;
+            src: url(fonts/ThompsonModernSemibold.woff) format('woff');
+        }
+        body{
+            font-family:'thomson', sans-serif;
+            margin-left:50px;
+        }
+        #nav{
+            background-color:#041E42;
+            width:200px;
+            padding-right:50px;
+            border-radius:0 0 30px 0;
+            /*position:relative;*/
+        }
+        #nav ul{
+            /*background-color:skyblue;*/
+            padding:30px;
+        }
+        #nav ul li{
+            /*background-color:pink;*/
+            list-style:none;
+            font-size:50px;
+            letter-spacing:-1.25px;
+        }
+        #nav ul li a{
+            text-decoration:none;
+            color:#FFF;
+        }
+        #nav ul li a:hover{
+            color:#41B6E6;
+        }
+        /*
+        .home::after{
+            content:"";
+            width:150px;
+            height:40px;
+            background-color:yellowgreen;
+            position:absolute;
+            left:30px;
+            top:40px;
+            opacity:.5;
+        }
+        */
+        /* 우리가 추가 */
+        .screen_out {
+            width:0;
+            height:0;
+            position: absolute;
+            line-height:0;
+            text-indent: -9999px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+    <h2 class="screen_out">Main Service</h2>
+    <ul>
+        <li class="home"><a href="">Home</a></li>
+        <li class="Work"><a href="">Work</a></li>
+        <li class="Vision"><a href="">Vision</a></li>
+        <li class="News"><a href="">News</a></li>
+        <li class="Careers"><a href="">Careers</a></li>
+    </ul>
+    </div>
+</body>
+</html>

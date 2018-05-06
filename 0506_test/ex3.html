@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>밴드-이메일로 회원가입</title>
+    <link rel="shortcut icon" href="img/band_favicon.ico" />
+    <link rel="stylesheet" href="css/notosanskr.css" />
+    <style type="text/css">
+        body{
+            font-family:'Noto Sans KR', sans-serif;
+        }
+        div span{
+            font-style:italic;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://band.us">BAND</a>
+    <h1>회원가입</h1>
+    <form action="reg.do" method="post">
+        <label for="email">이메일</label>
+        <input type="text" id="email" name="email" placeholder="이메일" />
+        <br />
+        <label for="pwd">비밀번호</label>
+        <input type="password" id="pwd" name="pwd" placeholder="비밀번호" />
+        <p>비밀번호는 알파벳과 숫자를 포함해야 하고 6자 이상이어야 합니다.</p>
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" placeholder="이름" />
+        <p><img src="img/captcha.png" alt="캡챠" /></p>
+        <!-- textarea의 필수 속성 : rows / cols -->
+        <textarea rows="5" cols="40" name="txtarea"></textarea>
+        <br />
+        <div>
+            <input type="checkbox" id="agreementAll" name="agreementAll" value="yes" />
+            <label for="agreementAll">전체동의(선택 항목 포함)</label>
+        </div>
+        <div>
+            <input type="checkbox" id="inform" name="inform" value="yes" />
+            <label for="inform">
+                <a href="http://band.us/policy/terms">이용약관</a>과
+                <a href="http://band.us/policy/privacy">개인정보 수집 및 이용에 대한 안내</a>
+            </label>
+        </div>
+        <div>
+            <input type="checkbox" id="agreeeEvt" name="agreeeEvt" value="yes" />
+            <label for="agreeeEvt">이벤트 서비스 수신 안내<span>(선택)</span></label>
+        </div>
+        <button type="submit">가입하기</button>
+    </form>
+</body>
+</html>
