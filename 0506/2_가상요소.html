@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가상요소</title>
+    <style type="text/css">
+        #box{
+            background-color:lightgray;
+            width:300px;
+            height:200px;
+            position:relative;
+        }
+        #box:hover{
+            background-color:pink;
+        }
+        /*
+            가상 요소(::) : 마크업에는 존재하지 않는 요소를 CSS에서 추가하는 것
+
+            언제 사용하는지?
+            디자인이나 레이아웃을 위해 요소가 필요한데, 구조나 데이터는 아닐 때
+            (ex > 화살표를 만들 때 아이콘 추가 등)
+
+            ::before : 첫 번째 자식 요소로 추가
+            ::after : 두 번째 자식 요소로 추가
+
+            반드시 content 속성을 써야함
+        */
+        #box::before{
+            content:""; /* 안쓰면 안됨(반드시 필요함!!!!!) 빈 칸으로 둬야함 */
+            display:block;
+            width:0px;
+            height:0px;
+            /*background-color:red;*/
+            border-top:50px solid skyblue;
+            border-right:50px solid transparent;
+            position:absolute;
+            right:-50px;
+            top:0;
+        }
+        #box::after{
+            content:"나";
+       }
+    </style>
+</head>
+<body>
+    <div id="box">안녕하세요</div>
+</body>
+</html>

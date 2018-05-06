@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>수직메뉴</title>
+    <link rel="stylesheet" href="css/notosanskr.css" />
+    <style type="text/css">
+        body{
+            /*
+                브라우저가 가지고 있는 기본 css
+                margin:8px; 없애줌
+            */
+            margin:0;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .screen_out{
+            width:0;
+            height:0;
+            line-height:0;
+            position:absolute;
+            text-indent:-9999px; /* 글자 들여쓰기 */
+            overflow:hidden;
+            /* display:none을 주면 리더기가 읽지 못함 */
+        }
+        #nav{
+            border:2px solid skyblue;
+            width:120px;
+        }
+        #nav ul{
+            /*
+                브라우저가 가지고 있는 기본 css
+                margin-top / margin-bottom 없애줌
+            */
+            background-color:lightgray;
+            width:120px;
+            margin:0;
+            padding:0;
+        }
+        #nav li{
+            /*
+                브라우저가 가지고 있는 기본 css
+                list-style 없애줌
+            */
+            /*background-color:pink;*/
+            list-style:none;
+            width:120px;
+            height:44px;
+        }
+        #nav li a{
+            background-color:#FFF;
+            text-decoration:none;
+            display:block;
+            width:120px;
+            height:40px;
+            font-size:18px;
+            font-weight:500;
+            text-align:center;
+            line-height:44px;
+            color:#424242;
+            border-top:2px solid gray;
+            /*transition:.2 ease;*/
+        }
+        #nav a:hover{
+            background-color:skyblue;
+            color:#FFF;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <!--
+            시멘틱 웹(검색 엔진), 웹 접근성을 위해 마크업은 해두지만
+            CSS를 입힐 때 제거하는 방법
+        -->
+        <h2 class="screen_out">주요 서비스</h2>
+        <ul>
+            <li><a href="">메&nbsp;일</a></li>
+            <li><a href="">카&nbsp;페</a></li>
+            <li><a href="">블로그</a></li>
+            <li><a href="">지식in</a></li>
+        </ul>
+    </div>
+    <!--
+        <header></header>
+        <footer></footer>
+        <main></main>
+        <section></section>
+        <article></article>
+        <nav></nav>
+    -->
+</body>
+</html>
