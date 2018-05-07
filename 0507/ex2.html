@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>ex2</title>
+		<link rel="icon" href="img/daum_movie.ico" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<style type="text/css">
+			.poster_img{
+				width:100px;
+			}
+			/* table에 border 지정 */
+			table{
+				/*border:1px solid #424242;*/ /* table에 border 없어도 됨 */
+				border-collapse:collapse; /* 셀 간의 간격을 없애는 방법 */
+			}
+			th, td{
+				border:1px solid #424242;
+				padding:10px 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1></h1>
+		<h2>영화검색</h2>
+		<!-- accept-charset : 서버로 보낼 때 인코딩 -->
+		<form accept-charset="EUC-KR" action="http://movie.naver.com/movie/search/result.nhn" method="get">
+			<fieldset>
+				<legend>영화 검색 폼</legend>
+				<label for="search"></label>검색
+				<input type="text" id="search" name="query" placeholder="검색할 영화이름" />
+				<button><i class="fa fa-search"></i> 검색</button>
+			</fieldset>
+		</form>
+		<h2>일일 박스오피스</h2>
+		<table>
+			<caption class="screen_out">박스오피스</caption>
+			<thead>
+				<tr>
+					<th scope="col">순위</th>
+					<th scope="col">순서</th>
+					<th scope="col">영화명</th>
+					<th scope="col">관객수</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td><img class="poster_img" src="poster/poster1.jpg" alt="아이캔스피크 포스터" /></td>
+					<th scope="row">아이캔스피크</th>
+					<td>118,826</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="4"><a href="">영화진흥위원회 영화관 입장권 통합전산망 제공</a></td>
+				</tr>
+			</tfoot>
+		</table>
+	</body>
+</html>

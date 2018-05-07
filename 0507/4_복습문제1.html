@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습문제1</title>
+    <style type="text/css">
+        #wrap{
+            /*background-color:yellowgreen;*/
+            width:220px;
+            height:300px;
+            border:2px solid #424242;
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin-left:-112px;
+            margin-top:-151px;
+        }
+        #logo{
+            /*background-color:violet;*/
+            width:220px;
+            height:40px;
+            margin:10px 0;
+            background:url(img/img_logo_151001.png);
+            background-repeat:no-repeat;
+            background-position:center;
+            text-indent:-9999px;
+            overflow:hidden;
+        }
+        #nav{
+            /*background-color:lightgray;*/
+            width:220px;
+            height:240px;
+        }
+        .screen_out{
+            width:0;
+            height:0;
+            line-height:0;
+            text-indent:-9999px;
+            position:absolute;
+            overflow:hidden;
+        }
+        #nav ul{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+        #nav li{
+            /*background-color:skyblue;*/
+            width:220px;
+            height:40px;
+        }
+        #nav a{
+            /*background-color:pink;*/
+            background:url(img/img_gnb_corp_151001.gif);
+            display:block;
+            width:100px;
+            height:40px;
+            margin:auto;
+            text-indent:-9999px;
+            overflow:hidden;
+        }
+        #nav .kakao a{
+            background-position:13px -50px;
+        }
+        #nav .kakao a:hover{
+            background-position:13px -100px;
+        }
+        #nav .invest a{
+            background-position:-120px -50px;
+        }
+        #nav .invest a:hover{
+            background-position:-120px -100px;
+        }
+        #nav .recruit a{
+            background-position:-240px -50px;
+        }
+        #nav .recruit a:hover{
+            background-position:-240px -100px;
+        }
+        #nav .news a{
+            background-position:-360px -50px;
+        }
+        #nav .news a:hover{
+            background-position:-360px -100px;
+        }
+        #nav .qna a{
+            background-position:-480px -50px;
+        }
+        #nav .qna a:hover{
+            background-position:-480px -100px;
+        }
+        #nav .privacy a{
+            background-position:-600px -50px;
+        }
+        #nav .privacy a:hover{
+            background-position:-600px -100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1 id="logo"><a href="">다음카카오</a></h1>
+        <div id="nav">
+            <h2 class="screen_out">다음카카오 메인메뉴</h2>
+            <ul>
+                <li class="kakao"><a href=''>다음카카오</a></li>
+                <li class="invest"><a href=''>투자정보</a></li>
+                <li class="recruit"><a href=''>인재영입</a></li>
+                <li class="news"><a href=''>새소식</a></li>
+                <li class="qna"><a href=''>고객문의</a></li>
+                <li class="privacy"><a href=''>프라이버시 정책</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

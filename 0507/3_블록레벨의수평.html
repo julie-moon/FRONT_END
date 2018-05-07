@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>블록레벨의 수평</title>
+    <style type="text/css">
+        div{
+            width:100px;
+            height:100px;
+            float:left;
+            /*display:inline-block;*/ /* 블록레벨의 장점과 인라인레벨의 장점을 같이 가짐 */
+            /*
+                블록레벨의 수평 레이아웃 적용법
+                1) float:left(전통적인 방법)
+                2) display:inline-block(최신 방법)
+                3) 완전 최신(CSS3)
+            */
+        }
+        #pink{
+            background-color:pink;
+        }
+        #skyblue{
+            background-color:skyblue;
+        }
+        #lightgray{
+            background-color:lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div id="pink"></div>
+    <div id="skyblue"></div>
+    <div id="lightgray"></div>
+</body>
+</html>

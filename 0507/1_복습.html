@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습</title>
+    <style type="text/css">
+        body{
+            /* 브라우저가 가진 css 제거 */
+            margin:0;
+            /*font-size:16px;*/
+        }
+        #carBox{
+            width:1024px;
+            height:768px;
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin-left:-532px;
+            margin-top:-394px;
+            border:10px solid skyblue;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+        h1{
+            /* 브라우저가 가진 css 제거 */
+            /*
+            em은 body의 font-size를 기준으로 하여 비율
+            rem은 부모 요소의 font-size를 기준으로 하여
+            */
+            font-size:1em;
+            font-weight:normal;
+            margin:0;
+
+            background-color:#039BE5;
+            width:800px;
+            height:100px;
+            box-shadow: 5px 5px 20px #424242;
+            position:absolute;
+            top:20px;
+            left:-30px;
+            font-size:45px;
+            font-weight:bold;
+            line-height:100px;
+            color:#FFF;
+            text-indent:30px;
+            text-shadow:1px 1px 2px #424242;
+        }
+        h1::before{
+            content:"";
+            position:absolute;
+            top:100px;
+            left:0;
+            width:0;
+            height:0;
+            border-top:20px solid #01579B;
+            border-left:20px solid transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="carBox">
+        <h1>Mercedes-Benz AMG Project ONE</h1>
+        <img src="img/AMG_Project_ONE.jpg" alt="Mercedes-Benz AMG Project ONE" />
+    </div>
+</body>
+</html>

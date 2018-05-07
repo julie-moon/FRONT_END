@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 수직 메뉴</title>
+    <style type="text/css">
+        /*
+            마크업 상에는 존재하기 때문에 웹 접근성 검색 엔진 등 시멘틱 웹에서는 작동 되지만
+            CSS를 적용하면 눈에는 보이지 않게 하는 방법
+        */
+        body{
+            margin:0;
+        }
+        .screen_out{
+            width:0;
+            height:0;
+            line-height:0;
+            position:absolute;
+            text-indent:-9999px;
+            overflow:hidden;
+        }
+        #nav{
+            background-color:pink;
+            width:300px;
+            height:400px;
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin-left:-150px;
+            margin-top:-200px;
+        }
+        #nav ul{
+            background-color:yellowgreen;
+            padding:0;
+            margin:0;
+            list-style:none;
+        }
+        #nav ul li{
+            background-color:skyblue;
+            width:300px;
+            height:100px;
+        }
+        #nav ul li a{
+            background-color:lightgray;
+            /* 인라인 레벨은 width, height 적용이 안되기 때문에 display:block으로 바꿔 줘야함 */
+            display:block;
+            width:300px;
+            height:100px;
+            /*
+                CSS를 제거 했을 때는 글자가 보여짐(웹 접근성 및 시멘틱 웹)
+                IR(Image Replace)기법 : CSS를 적용하면 글자는 보이지 않고 이미지로 대치하는 방법
+                - 뒷 배경 이미지 깔고, 글자를 멀리 보내고(text-indent), 부모에서 벗어난 글자를 숨김(overflow)
+            */
+            text-indent:-9999px;
+            overflow:hidden;
+        }
+        #nav .mail a{
+            background:url(img/mail_a.gif);
+            transition:.2s ease;
+        }
+        #nav .cafe a{
+            background:url(img/cafe_a.gif);
+            transition:.2s ease;
+        }
+        #nav .blog a{
+            background:url(img/blog_a.gif);
+            transition:.2s ease;
+        }
+        #nav .kin a{
+            background:url(img/kin_a.gif);
+            transition:.2s ease;
+        }
+        /*
+            IS(Image Sprite)기법 : 하나의 이미지를 나눠서 쓰는 기법
+            장점 : 나눌 때보다 용량도 작고, 서버 부담도 적고 깜빡임도 없음
+        */
+        #nav ul li a:hover{
+            background-position:0 -100px;
+        }
+        #nav ul li a:active{
+            transition:none;
+            background-position:0 -200px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <h2 class="screen_out">주요 서비스</h2>
+        <ul>
+            <li class="mail"><a href="http://mail.naver.com">메일</a></li>
+            <li class="cafe"><a href="http://cafe.naver.com">카페</a></li>
+            <li class="blog"><a href="http://blog.naver.com">블로그</a></li>
+            <li class="kin"><a href="http://kin.naver.com">지식in</a></li>
+        </ul>
+    </div> <!-- // #nav -->
+</body>
+</html>
