@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>float의 개념</title>
+    <style type="text/css">
+        img{
+            width:100px;
+            /*
+                1층 : 블록레벨(position : static)
+                2층 : 인라인레벨(글자) / float
+                3층 : absolute, relative, fixed 일 때
+
+                float을 지정하면
+                1) 2층으로 바뀜(블록레벨인데)
+                2) 공간을 차지하지 않음
+            */
+            float:left;
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/purin.png" alt="푸린" />
+    <div>
+        푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린
+        푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린
+        푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린
+        푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린
+        푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린
+        푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린푸린
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>수평 메뉴</title>
+    <!--
+        브라우저가 가진 CSS를 지우는 reset.css
+
+    -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <style type="text/css">
+        #nav{
+            background-color:skyblue;
+            width:548px;
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin-left:-274px;
+            margin-top:-80px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        #nav ul{
+            /*background-color:lightgray;*/
+            width:548px;
+            height:160px;
+        }
+        #nav ul li{
+            background-color:pink;
+            width:137px;
+            height:160px;
+            float:left;
+        }
+        #nav ul li a{
+            display:block;
+            /*background-color:mediumaquamarine;*/
+            width:127px;
+            height:150px;
+            border:5px solid #FFF;
+            text-indent:-9999px;
+            overflow:hidden;
+        }
+        #nav .muji{
+            background-image:url(img/footer_face01.gif);
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+        #nav .apeach{
+            background-image:url(img/footer_face02.gif);
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+        #nav .neo{
+            background-image:url(img/footer_face05.gif);
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+        #nav .ryan{
+            background-image:url(img/footer_face08.gif);
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+        #nav a:hover{
+            border:5px solid #424242;
+        }
+    </style>
+</head>
+<body>
+<div id="nav">
+    <h2 class="screen_out">카카오 메뉴</h2>
+    <ul>
+        <li class="muji"><a href="">무지</a></li>
+        <li class="apeach"><a href="">어피치</a></li>
+        <li class="neo"><a href="">네오</a></li>
+        <li class="ryan"><a href="">라이언</a></li>
+    </ul>
+</div>
+</body>
+</html>

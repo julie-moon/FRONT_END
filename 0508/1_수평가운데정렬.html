@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>수평 가운데 정렬</title>
+    <style type="text/css">
+        body{
+            margin:0;
+        }
+        #box{
+            background-color:pink;
+            width:1000px;
+            height:600px;
+            text-align:center; /* 인라인레벨 수평 가운데 정렬은 부모에게 적용시켜 줘야함 */
+            margin:auto;
+        }
+        #block{
+            background-color:skyblue;
+            width:100px;
+            /*
+                auto 값을 지정하는 속성
+                width : 부모의 width
+                height : 자식 height의 합
+                margin : margin-top / bottom은 auto 값이 0
+                         margin-left / right는 auto 적용했을 때 가운데 정렬 됨
+            */
+            /*
+                블록레벨의 수평 가운데 정렬(단, *** width 값이 있어야 함 ***)
+                margin : auto;
+            */
+            margin:auto;
+        }
+        #inline{
+            background-color:lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="block">블록</div>
+        <span id="inline">인라인</span>
+    </div>
+</body>
+</html>

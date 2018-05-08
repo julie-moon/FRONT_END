@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>인라인블록</title>
+    <style type="text/css">
+        #box {
+            background-color:yellowgreen;
+            width:800px;
+            height:100px;
+            /*
+                인라인블록은 인라인 속성을 가지기 때문에
+                부모에 text-align:center를 적용하면 가운데 정렬 할 수 있음
+                (float:left) 처리 시 가운데 정렬 안됨
+            */
+            text-align:center;
+        }
+        .box{
+            width:100px;
+            height:100px;
+            /*
+                인라인블록은 인라인처럼 수평으로
+                블록처럼 width, height를 가짐
+            */
+            display:inline-block;
+        }
+        .pink{
+            background-color:pink;
+        }
+        .lightgray{
+            background-color:lightgray;
+        }
+        .skyblue{
+            background-color:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <!--
+            인라인은 엔터 치면 약간 공간 떨어짐
+            주석으로 깔끔하게 처리할 수 있음
+        -->
+        <div class="box pink"></div><!--
+        --><div class="box lightgray"></div><!--
+        --><div class="box skyblue"></div>
+    </div>
+</body>
+</html>

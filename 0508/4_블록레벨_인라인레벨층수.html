@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>블록레벨 인라인레벨 층수</title>
+    <style type="text/css">
+        #pink, #skyblue{
+            width:100px;
+            height:100px;
+            text-align:center;
+            line-height:100px;
+            font-size:40px;
+        }
+        #pink{
+            background-color:pink;
+        }
+        #skyblue{
+            background-color:skyblue;
+            margin-left:50px;
+            margin-top:-50px;
+        }
+        span{
+            padding:5px;
+        }
+        #hotpink{
+            background-color:hotpink;
+        }
+        #deepskyblue{
+            background-color:deepskyblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="pink">
+        <span id="hotpink">글자</span>
+    </div>
+    <div id="skyblue">
+        <span id="deepskyblue">글자</span>
+    </div>
+</body>
+</html>
