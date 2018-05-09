@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>transform</title>
+    <style type="text/css">
+        #wrap{
+            width:1000px;
+            height:700px;
+            border:1px solid #424242;
+            margin:auto;
+            position:relative;
+        }
+        .box{
+            width:100px;
+            height:100px;
+            transition:.2s ease;
+        }
+        /*
+            transform : 변형시키다
+
+            속성값
+            - translate : 운반(x,y,z)
+            - scale : 비율
+            - rotate : 회전
+
+            - skew : 잘 안씀
+            - matrix : 어려움
+        */
+        .pink{
+            background-color:pink;
+            transform:translate(0,0);
+        }
+        #wrap:hover .pink{
+            transform:translate(350px,100px);
+        }
+        .lightgray{
+            background-color:lightgray;
+            /*
+                기본 값을 정의해야함
+            */
+            transform:translate(700px,150px) rotate(0deg);
+        }
+        #wrap:hover .lightgray{
+            transform:translate(700px,150px) rotate(360deg);
+        }
+        .skyblue{
+            background-color:skyblue;
+            position:absolute;
+            left:100px;
+            bottom:200px;
+            transform:scale(1);
+        }
+        #wrap:hover .skyblue{
+            transform:scale(2);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box pink"></div>
+        <div class="box lightgray"></div>
+        <div class="box skyblue"></div>
+    </div>
+</body>
+</html>

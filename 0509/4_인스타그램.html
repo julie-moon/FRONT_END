@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>인스타그램</title>
+    <style type="text/css">
+        .card{
+            width:400px;
+            height:400px;
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin-left:-200px;
+            margin-top:-200px;
+        }
+        .over{
+            background-color:rgba(0,0,0,0);
+            width:400px;
+            height:400px;
+            position:absolute;
+            left:0;
+            bottom:-400px;
+            transition:.4s ease;
+            color:#FFF;
+        }
+        .card:hover .over{
+            bottom:0;
+            background-color:rgba(0,0,0,.5);
+        }
+        .over ul{
+            /*background-color:pink;*/
+            height:24px;
+            margin:0;
+            padding:0;
+            list-style:none;
+            text-align:center;
+            position:absolute;
+            top:188px;
+            left:130px;
+        }
+        .over ul li{
+            /*background-color:skyblue;*/
+            display:inline;
+            font-size:20px;
+        }
+        .icon{
+            /*background-color:lightgray;*/
+            display:inline-block;
+            width:19px;
+            height:19px;
+            background-image:url(img/insta.png);
+        }
+        .love{
+            background-position:-405px -158px;
+        }
+        .comment{
+            background-position:-405px -137px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="img/irene.jpg" alt="아이린" />
+        <div class="over">
+            <ul>
+                <li><i class="icon love"></i> 123개</li>
+                <li><i class="icon comment"></i> 456개</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

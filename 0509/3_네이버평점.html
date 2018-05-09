@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>네이버 평점</title>
+    <style type="text/css">
+        #gradeBox{
+            /*background-color:pink;*/
+            width:120px;
+            height:20px;
+            background-image:url(img/sp_ico.png);
+            background-position:0 109px;
+        }
+        #gradeOn{
+            /*background-color:skyblue;*/
+            width:0px;
+            height:20px;
+            background-image:url(img/sp_ico.png);
+            background-position:0 84px;
+            text-indent:-9999px;
+            overflow:hidden;
+            transition:.3s ease;
+        }
+        #gradeBox:hover #gradeOn{
+            width:120px;
+        }
+    </style>
+</head>
+<body>
+    <div id="gradeBox">
+        <div id="gradeOn">9.5점</div>
+    </div>
+</body>
+</html>
