@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery 연습</title>
+</head>
+<body>
+    <button>눌러봐</button>
+    <!-- 버튼을 눌렀을 때 alert 창 띄우기 -->
+    <!-- 1) jquery import -->
+    <script src="js/jquery.js"></script>
+    <!-- 2) 작성할 코드 script 요소 -->
+    <script>
+        // 3) button 요소를 선택하고 click 이벤트 리스너를 붙이고 이벤트 핸들러 함수를 작성
+        $("button").click(function() {
+            // 4) 확인 버튼 한 개가 있는 다이얼로그 창을 띄우는 자바스크립트의 함수를 호출
+            alert("test");
+        });
+    </script>
+</body>
+</html>

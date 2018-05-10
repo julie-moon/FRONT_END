@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 메서드</title>
+    <style type="text/css">
+        #box{
+            width:400px;
+            height:300px;
+            border:1px solid #424242;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button>뒷배경 색상 입력</button>
+        <button>height 얻기</button>
+        <button>여러 개의 속성 한 번에 세팅</button>
+    </p>
+    <div id="box"></div>
+    <script src="js/jquery.js"></script>
+    <script>
+        /*
+            일반적인 프로그래밍 언어는 getter와 setter 각각 두 개씩
+            하지만 jquery는 getter, setter 한 개로 처리
+
+            css 메서드
+            1) 1개 속성 setter : css(속성명, 속성값);
+            2) 속성값 getter : css(속성명);
+            3) 여러 개의 속성 setter : css(객체)
+
+            index는 0번지부터
+            getter는 변수로 받아야 함
+        */
+
+        $("button:first").click(function() {
+            $("#box").css("background-color", "pink");
+        }); // 첫 번째 버튼 click() end
+
+        $("button:eq(1)").click(function() {
+            var height = $("#box").css("height");
+            alert(height);
+        }); // 두 번째 버튼 click() end
+        $("button:last").click(function(){
+            $("#box").css({"width":1000,
+                           "height":576,
+                           "border":"40px dotted pink",
+                           "background":"url(img/b_ryan.png)"
+                          })
+        }); // 세 번째 버튼 click() end
+    </script>
+</body>
+</html>

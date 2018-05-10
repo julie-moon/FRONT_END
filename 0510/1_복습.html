@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/notosanskr.css" />
+    <style type="text/css">
+        body{
+            font-family: "Noto Sans KR", sans-serif;
+        }
+        #box{
+            background-color:lightgray;
+            width:400px;
+            height:400px;
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin-left:-200px;
+            margin-top:-200px;
+            background:url(img/purin.png);
+            background-size:cover;
+            background-repeat:no-repeat;
+            box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+        }
+        #box ul{
+            /*background-color:skyblue;*/
+        }
+        #box ul li{
+            /*background-color:pink;*/
+            width:200px;
+            height:200px;
+            float:left;
+            cursor:pointer;
+            text-align:center;
+            line-height:200px;
+            color:#FFF;
+            font-size:25px;
+            font-weight:700;
+            text-shadow:2px 2px 3px #424242;
+        }
+        /* css3의 가상클래스 선택자 */
+        #box li:nth-child(1){
+            background-color:#F8BBD0;
+            transform:perspective(500px) rotateX(0deg);
+            transition:.2s ease;
+            transform-origin:50% 0%;
+        }
+        #box li:nth-child(1):active{
+            transform:perspective(500px) rotateX(-60deg);
+        }
+        #box li:nth-child(2){
+            background-color:#F06292;
+            transform:perspective(500px) rotateY(0deg);
+            transition:.2s ease;
+            transform-origin:100% 50%;
+        }
+        #box li:nth-child(2):active{
+            transform:perspective(500px) rotateY(-60deg);
+        }
+        #box li:nth-child(3){
+            background-color:#E91E63;
+            transform:perspective(500px) rotateY(0deg);
+            transition:.2s ease;
+            transform-origin:0% 50%;
+        }
+        #box li:nth-child(3):active{
+            transform:perspective(500px) rotateY(60deg);
+        }
+        #box li:nth-child(4){
+            background-color:#AD1457;
+            transform:perspective(500px) rotateY(0deg);
+            transition:.2s ease;
+            transform-origin:50% 100%;
+        }
+        #box li:nth-child(4):active{
+            transform:perspective(500px) rotateX(60deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+            <li>메뉴4</li>
+        </ul>
+    </div>
+</body>
+</html>

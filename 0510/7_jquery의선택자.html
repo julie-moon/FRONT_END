@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery의 선택</title>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <button>눌러보세요</button>
+    <ul>
+        <li>리스트1</li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+        <li>리스트4</li>
+        <li>리스트5</li>
+        <li>리스트6</li>
+        <li>리스트7</li>
+        <li>리스트8</li>
+    </ul>
+    <script src="js/jquery.js"></script>
+    <script>
+        $("button").click(function() {
+            // alert("test");
+
+            // 첫 번째, 네 번째, 일곱번째 마지막 li를 선택하고 글자색 바꾸기
+            $("li:first-child").css("color", "skyblue");
+            $("li:first").css("background-color", "pink");
+
+            $("li:nth-child(4)").css("color", "deepskyblue");
+            $("li:eq(3)").css("background-color", "deeppink"); // jquery 선택자 : eq(index)
+
+            $("li:nth-child(7)").css("color", "deeppink");
+            $("li:eq(6)").css("background-color", "yellow");
+
+            $("li:last-child").css("color", "pink");
+            $("li:last").css("background-color", "skyblue");
+        }); // click() end
+    </script>
+</body>
+</html>

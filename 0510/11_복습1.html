@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습1</title>
+    <style type="text/css">
+        #ryan{
+            width:200px;
+            position:absolute;
+            left:0;
+            transition:1s ease;
+        }
+    </style>
+</head>
+<body>
+    <p><button>움직여!</button></p>
+    <img id="ryan" src="img/001.gif" alt="움직이는라이언" />
+    <script src="js/jquery.js"></script>
+    <script>
+        var move=100;
+        $("button").click(function() {
+            $("#ryan").css("left",move);
+            move+=100;
+        });
+    </script>
+</body>
+</html>

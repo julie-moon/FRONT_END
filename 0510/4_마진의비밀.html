@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>마진의 비밀</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <style type="text/css">
+        ul{
+            width:200px;
+            background-color:pink;
+            /*
+                부모와 자식 간의 마진 겹침 현상
+                자식에게 margin-top을 줬는데 부모가 같이 마진을 가지는 현상
+                해결법 : 막으면 됨(
+                        1)padding, border
+                        2)overflow
+                        3)자식의 margin-top 대신 부모의 padding-top으로
+                       )
+            */
+            overflow:hidden;
+        }
+        li{
+            background-color:skyblue;
+            padding:10px;
+            margin:20px;
+            /*
+                형제들 간의 마진 겹침 현상
+                그러나 float이나 display:inline-block일 때는 마진 겹침 현상이 없음
+            */
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+    </ul>
+</body>
+</html>
