@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <p>
+        <button>버튼1</button>
+        <button>버튼2</button>
+        <button>버튼3</button>
+    </p>
+    <script src="js/jquery.js"></script>
+    <script>
+        /*
+            jquery를 사용하는 이유 :
+            순수 자바스크립트 객체들이 좋은 기능(함수)이 별로 없기 때문
+
+            그래서 순수 javascript 요소 객체를 jquery 객체로 바꿔서 사용함
+        */
+        $("button").click(function() {
+            // console.log(this);
+
+            /*
+                유저가 클릭한 그 버튼 -> this 키워드
+
+                this 키워드 : 순수 javascript 요소 객체
+                변경하려면 $(javascript 요소 객체)
+            */
+            $(this).css("color","red");
+        }); // click() end
+    </script>
+</body>
+</html>

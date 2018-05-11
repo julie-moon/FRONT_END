@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #ryan{
+            width:200px;
+            position:absolute;
+            transition:1s ease;
+        }
+    </style>
+</head>
+<body>
+    <p><button>MOVE!</button></p>
+    <img id="ryan" src="img/001.gif" alt="라이언" />
+    <script src="js/jquery.js"></script>
+    <script>
+        var move=100;
+        $("button").click(function() {
+            // alert("Hello ryan!");
+            $("#ryan").css("left",move);
+            move+=100;
+        });
+    </script>
+</body>
+</html>

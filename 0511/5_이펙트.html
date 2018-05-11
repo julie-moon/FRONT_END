@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이펙트</title>
+    <link rel="stylesheet" href="css/notosanskr.css" />
+    <style type="text/css">
+        button{
+            border:none;
+            padding:15px;
+            font-family:"Noto Sans KR", sans-serif;
+            font-size:15px;
+            font-weight:700;
+            color:#FFF;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button>show/hide</button>
+        <button>fadeIn/fadeOut</button>
+        <button>slideUp/slideDown</button>
+    </p>
+    <div id="box">
+        <img src="img/b_ryan.png" alt="라이언" />
+    </div>
+    <script src="js/jquery.js"></script>
+    <script>
+        $("button:eq(0)").click(function() {
+            /*
+                숨기기(.css("display","none");)
+                빈번하게 사용되기 때문에 hide() (display:none) / show() (display:block)
+
+                toggle()
+            */
+            $("#box").toggle(500);
+        }); // 첫 번째 버튼 click() end
+
+        $("button:eq(1)").click(function() {
+            // fadeIn / fadeOut / fadeToggle
+            $("#box").fadeToggle(500);
+        });
+
+        $("button:eq(2)").click(function() {
+            // slideUp / slideDown / slideToggle
+            $("#box").slideToggle(500);
+        });
+    </script>
+</body>
+</html>

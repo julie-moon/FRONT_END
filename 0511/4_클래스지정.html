@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>클래스 지정</title>
+    <style type="text/css">
+        img{
+            transition:1s ease;
+        }
+        /*
+            특정한 모습일 경우 css에 class를 지정한 후
+            jquery에서 addClass, removeClass를 이용
+        */
+        img.rotate{
+            transform:rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button>바꿔</button>
+    </p>
+    <img src="img/001.gif" alt="기침하는 라이언" />
+    <script src="js/jquery.js"></script>
+    <script>
+        $("button").click(function() {
+            // alert("test");
+            $("img").toggleClass("rotate");
+            // $("img").addClass("rotate");
+        });
+    </script>
+</body>
+</html>
