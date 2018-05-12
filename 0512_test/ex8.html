@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>멋진 영화 사이트</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/notosanskr.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <style type="text/css">
+        body{
+            font-family: "Noto Sans KR", sans-serif;
+        }
+        #wrap{
+        }
+        #header{
+            /*background-color:pink;*/
+            padding:25px 0;
+            border-bottom:1px solid lightgray;
+            text-align:center;
+            font-size:25px;
+            font-weight:700;
+            color:#FF9800;
+        }
+        #content{
+            /*background-color:#424242;*/
+            width:1094px;
+            margin:auto;
+            overflow:hidden;
+        }
+        #content ul{
+            padding-top:30px;
+        }
+        #content ul li{
+            /*background-color:skyblue;*/
+            width:236px;
+            height:340px;
+            float:left;
+            margin:0 0 30px 30px;
+        }
+        #content ul li a{
+            display:block;
+            width:236px;
+            height:340px;
+            position:relative;
+            overflow:hidden;
+        }
+        /* 마우스오버 시 배경 어둡게 */
+        #content ul li:hover>::before{
+            content:"";
+            display:block;
+            width:236px;
+            height:340px;
+            position:absolute;
+            left:0;
+            bottom:0;
+            background-color:rgba(0,0,0,.7);
+        }
+        #content ul li a:hover{
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+        #content ul li a .info_box{
+            width:236px;
+            height:150px;
+            background-color:#FFF;
+            position:absolute;
+            left:0;
+            bottom:-150px;
+            text-align:center;
+            transition:.5s ease;
+        }
+        #content ul li a:hover>.info_box{
+            bottom:0;
+        }
+        #content .info_box h3 {
+            /*background-color:skyblue;*/
+            color:#424242;
+            text-align:center;
+            font-size:18px;
+            font-weight:700;
+            padding:30px 20px;
+            text-overflow:ellipsis;
+            overflow:hidden;
+            white-space:nowrap;
+        }
+        #content .info_box button{
+            background-color:#FFF;
+            border:1px solid lightgray;
+            display:block;
+            width:100px;
+            height:40px;
+            margin:15px 0;
+            float:left;
+            font-size:14px;
+            font-weight:700;
+            color:lightgray;
+            cursor:pointer;
+        }
+        #content .info_box .wish_btn{
+            margin-left:16.5px;
+        }
+        #content .info_box .wish_btn:hover{
+            color:#E91E63;
+        }
+        #content .info_box .comment_btn{
+            border-left:none;
+        }
+        #content .info_box .comment_btn:hover{
+            color:#009688;
+        }
+        #footer{
+            /*background-color:pink;*/
+            padding:25px 0;
+            border-top:1px solid lightgray;
+            text-align:center;
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+        <h1><i class="fa fa-film"></i> 멋진 영화사이트</h1>
+    </div><!--//#header -->
+    <div id="content">
+        <h2 class="screen_out">영화목록</h2>
+        <ul>
+            <li>
+                <a href="">
+                    <div class="info_box">
+                        <h3>킹스맨:골든 서클</h3>
+                        <button class="wish_btn"><i class="fa fa-heart"></i>보고싶어요</button>
+                        <button class="comment_btn"><i class="fa fa-comment"></i> 코멘트쓰기</button>
+                    </div>
+                    <img src="poster/poster1.jpg" alt="킹스맨:골든 서클"/>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="info_box">
+                        <h3>아이 캔 스피크</h3>
+                        <button class="wish_btn"><i class="fa fa-heart"></i> 보고싶어요</button>
+                        <button class="comment_btn"><i class="fa fa-comment"></i> 코멘트쓰기</button>
+                    </div>
+                    <img src="poster/poster2.jpg" alt="아이 캔 스피크"/>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="info_box">
+                        <h3>살인자의 기억법</h3>
+                        <button class="wish_btn"><i class="fa fa-heart"></i> 보고싶어요</button>
+                        <button class="comment_btn"><i class="fa fa-comment"></i> 코멘트쓰기</button>
+                    </div>
+                    <img src="poster/poster3.jpg" alt="살인자의 기억법"/>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="info_box">
+                        <h3>극장판 요괴워치:하늘을 나는 고래와 더블세계다냥!</h3>
+                        <button class="wish_btn"><i class="fa fa-heart"></i> 보고싶어요</button>
+                        <button class="comment_btn"><i class="fa fa-comment"></i> 코멘트쓰기</button>
+                    </div>
+                    <img src="poster/poster4.jpg" alt="극장판 요괴워치:하늘을 나는 고래와 더블세계다냥!"/>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="info_box">
+                        <h3>베이비 드라이버</h3>
+                        <button class="wish_btn"><i class="fa fa-heart"></i> 보고싶어요</button>
+                        <button class="comment_btn"><i class="fa fa-comment"></i> 코멘트쓰기</button>
+                    </div>
+                    <img src="poster/poster5.jpg" alt="베이비 드라이버"/>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="info_box">
+                        <h3>김광석</h3>
+                        <button class="wish_btn"><i class="fa fa-heart"></i> 보고싶어요</button>
+                        <button class="comment_btn"><i class="fa fa-comment"></i> 코멘트쓰기</button>
+                    </div>
+                    <img src="poster/poster6.jpg" alt="김광석"/>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="info_box">
+                        <h3>레고 닌자고 무비</h3>
+                        <button class="wish_btn"><i class="fa fa-heart"></i> 보고싶어요</button>
+                        <button class="comment_btn"><i class="fa fa-comment"></i> 코멘트쓰기</button>
+                    </div>
+                    <img src="poster/poster7.jpg" alt="레고 닌자고 무비"/>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="info_box">
+                        <h3>인비저블 게스트</h3>
+                        <button class="wish_btn"><i class="fa fa-heart"></i> 보고싶어요</button>
+                        <button class="comment_btn"><i class="fa fa-comment"></i> 코멘트쓰기</button>
+                    </div>
+                    <img src="poster/poster8.jpg" alt="인비저블 게스트"/>
+                </a>
+            </li>
+        </ul>
+    </div><!--//#content -->
+    <div id="footer">
+        &copy; 2017 JBM.com
+    </div>
+</div>
+</body>
+</html>

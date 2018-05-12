@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ex3</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/apple.css" />
+    <style>
+        body {
+            font-family:'SF Pro KR', sans-serif;
+            text-align:center;
+            background:#fff;
+        }
+        #txt{
+            font-size:40px;
+            margin:30px 0;
+            font-weight:600;
+            transition:.5s ease;
+        }
+        #btn{
+            border:none;
+            background-color:#80D8FF;
+            padding:15px;
+            font-size:19px;
+            color:#FFF;
+            font-family:'SF Pro KR', sans-serif;
+            font-weight:700;
+        }
+        #btn:hover{
+            background-color:#00B0FF;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="txt">버튼을 눌러보세요.</h1>
+    <button id="btn">난 버튼</button>
+    <script src="js/jquery.js"></script>
+    <script>
+        $("#btn").click(function() {
+            // alert("test");
+            $("#txt").css({"transform":"scale(2)",
+                        "color":"#039BE5",
+                        "text-shadow":"2px 2px 2px #01579B"
+            });
+        });
+    </script>
+</body>
+</html>

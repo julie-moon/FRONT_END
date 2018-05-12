@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>문을 여시오!</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/apple.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<style>
+			#wrap {
+				width:700px;
+                height:700px;
+				box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+				            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				position:fixed;
+				left:50%;
+				top:50%;
+				margin:-350px 0 0 -350px; 
+				font-family:'SF Pro KR',sans-serif;
+                text-align:center;
+			}
+			#wrap h1{
+				font-size:30px;
+				font-weight:600;
+				color:#FFB300;
+				margin:30px 0;
+			}
+			#box{
+				width:500px;
+				height:500px;
+				margin:auto;
+				box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+				background:url(img/purin.png),
+						   url(img/purin2.png);
+				background-repeat:no-repeat;
+				background-size:300px, 100px;
+				background-position:center, 300px 300px;
+			}
+			.door{
+				background-color:lightgray;
+				width:250px;
+				height:500px;
+				font-size:300px;
+				line-height:500px;
+				color:#FFF;
+				text-shadow:1px 1px 2px #424242;
+				float:left;
+			}
+			#man{
+				background-color:pink;
+				transform:perspective(1000px) rotateY(0deg);
+				transform-origin:0% 50%;
+				transition:.5s ease;
+			}
+			/*
+			#man:active{
+				transform:perspective(1000px) rotateY(-140deg);
+			}
+			*/
+			#woman{
+				background-color:skyblue;
+				transform:perspective(1000px) rotateY(0deg);
+				transform-origin:100% 50%;
+				transition:.5s ease;
+			}
+			/*
+			#woman:active{
+				transform:perspective(1000px) rotateY(140deg);
+			}
+			*/
+			#executeBtn{
+				display:block;
+				border:none;
+				background-color:#8BC34A;
+				width:200px;
+				height:50px;
+				margin:30px auto;
+				font-size:15px;
+				color:#FFF;
+				font-weight:600;
+			}
+			#executeBtn:hover{
+				background-color:#558B2F;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<h1>문을 여시오!</h1>
+			<div id="box">
+				<div id="man" class="door"><i class="fa fa-male"></i></div>
+				<div id="woman" class="door"><i class="fa fa-female"></i></div>
+			</div><!--//box-->
+            <button id="executeBtn">열고 닫기</button>
+		</div><!--//wrap-->
+		<script src="js/jquery.js"></script>
+		<script>
+            var openman = 0;
+            var openwoman = 0;
+
+			$("#executeBtn").click(function() {
+                // alert("test");
+
+				if (openman == 0 || openwoman == 0) {
+					openman = -140;
+                    openwoman = 140;
+				} else if (openman == -140 || openwoman == 140) {
+                    openman = 0;
+                    openwoman = 0;
+                }
+				$("#man").css("transform", "perspective(1000px) rotateY(" + openman + "deg)");
+				$("#woman").css("transform", "perspective(1000px) rotateY(" + openwoman + "deg)");
+				// alert(openman);
+				// alert(openwoman);
+
+            });
+		</script>
+	</body>
+</html>
