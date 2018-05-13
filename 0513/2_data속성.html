@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>data 속성</title>
+    <link rel="stylesheet" href="css/notosanskr.css" />
+    <style>
+        button{
+            width:100px;
+            height:40px;
+            background-color:#FFF;
+            border:1px solid lightgray;
+            font:700 15px "Noto Sans KR", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        예전에는 요소 안에 data를 넣는 경우가 많았음
+
+        HTML5에서는 'data-' 속성을 만듦(웹 표준)
+        ex > 이름 : data-name="박지훈"
+             색상 : data-color="pink"
+             아이디 : data-id="wingging2"
+    -->
+    <p>
+        <button id="pink" data-color="pink">PINK</button>
+        <button id="skyblue" data-color="skyblue">SKYBLUE</button>
+    </p>
+    <script src="js/jquery.js"></script>
+    <script>
+        $("button").click(function() {
+            // alert("SKYBLUE");
+            var color = $(this).attr("data-color");
+            $("body").css("background-color",color);
+        });
+    </script>
+</body>
+</html>

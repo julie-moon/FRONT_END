@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자동차 갤러리</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/notosanskr.css" />
+    <style type="text/css">
+        body{
+            font-family:"Noto Sans KR", sans-serif;
+        }
+        #wrap{
+            /*background-color:lightgray;*/
+            width:900px;
+            margin: 0 auto;
+            overflow: hidden;
+            border:1px solid #424242;
+        }
+        #wrap h1{
+            /*background-color:pink;*/
+            height:60px;
+            text-align:center;
+            line-height:60px;
+            font-size:25px;
+            font-weight:700;
+        }
+        #contentImg{
+            margin:20px 45px;
+            border:5px solid #FFF;
+        }
+        #contentImg.click{
+            position:relative;
+            z-index:1;
+            border:5px solid #FFF;
+            box-shadow:0 0 20px #FFF;
+        }
+        #wrap ul li{
+            float:left;
+            margin-left:10px;
+            margin-bottom:10px;
+        }
+        #wrap li img{
+            opacity:.6;
+            border:4px solid #FFF;
+            transition:.5s ease;
+        }
+        #wrap li img:hover{
+            opacity:1;
+            border:4px solid skyblue;
+        }
+        #popup{
+            width:100%;
+            height:100%;
+            background-color:rgba(0,0,0,.9);
+            position:fixed;
+            top:0;
+            left:0;
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>Car Images</h1>
+        <img id="contentImg" src="img/no_image.jpg" alt="" width="800" />
+        <ul>
+            <li>
+                <img src="img/c1.jpg" alt="Ferrari Portofino" width="160" />
+            </li>
+            <li>
+                <img src="img/c2.jpg" alt="Range Rover Velar" width="160" />
+            </li>
+            <li>
+                <img src="img/c3.jpg" alt="Genesis G70" width="160" />
+            </li>
+            <li>
+                <img src="img/c4.jpg" alt="Bentley Bentayga" width="160" />
+            </li>
+            <li>
+                <img src="img/c5.jpg" alt="Porsche 911 GT3" width="160" />
+            </li>
+        </ul>
+    </div><!-- // #wrap -->
+    <div id="popup"></div><!-- // #popup -->
+    <script src="js/jquery.js"></script>
+    <script>
+        $("li img").mouseover(function() {
+            var src = $(this).attr("src");
+            // alert(src);
+            $("#contentImg").attr("src", src);
+        });
+        $("#contentImg").click(function(){
+            // alert("test");
+            $("#popup").fadeIn(500);
+            $("#contentImg").addClass("click");
+        });
+        $("#popup").click(function() {
+            $("#popup").fadeOut(500);
+        });
+    </script>
+</body>
+</html>

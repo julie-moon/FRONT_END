@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>속성 관련 메소드</title>
+    <style type="text/css">
+        img{
+            transition:.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button>src 변경</button>
+        <button>alt 얻기</button>
+        <button>여러 속성 한 번에 변경</button>
+    </p>
+    <img src="img/k1.jpg" width="400" title="라이언" alt="라이언" />
+
+    <script src="js/jquery.js"></script>
+    <script>
+        /*
+            css 메소드 : css 속성에 대한 메소드
+            attr 메소드 : 요소의 속성 관련 메소드
+
+            용법
+            1) attr(속성명, 속성값) : setter
+            2) attr(속성명) : getter
+            3) attr(객체) : 여러 속성을 세팅하는 setter
+
+            객체 : 속성들의 묶음 ex > var wingging2 = {name:"박지훈", age:19, height:172}
+        */
+        $("button:eq(0)").click(function() {
+            // alert("test");
+            $("img").attr("src", "img/k8.jpg");
+        });
+
+        $("button:eq(1)").click(function() {
+            var altValue = $("img").attr("alt");
+            alert(altValue);
+        });
+
+        $("button:eq(2)").click(function() {
+            $("img").attr({src:"img/k3.jpg",
+                           width:640,
+                           alt:"어피치",
+                           title:"어피치"})
+        });
+    </script>
+</body>
+</html>

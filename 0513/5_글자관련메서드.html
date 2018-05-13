@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>글자 관련 메소드</title>
+        <style type="text/css">
+            #box{
+                width:300px;
+                height:100px;
+                background-color:lightgray;
+                text-align:center;
+                line-height:100px;
+                font-size:30px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            <input id="txt" value="" />
+            <button>입력</button>
+            <button>얻기</button>
+        </p>
+        <div id="box">?</div>
+        <script src="js/jquery.js"></script>
+        <script>
+            /*
+                글자 관련 메소드
+                1) text() : getter
+                2) text(내용) : setter
+
+                input, textarea, select 등의 글자는 파라미터의 값(value 값)
+                1) val() : getter
+                2) val()
+            */
+
+            $("button:eq(0)").click(function() {
+                // $("#box").text("안녕하세요");
+                var txt = $("#txt").val();
+                // alert(txt);
+                $("#box").text(txt);
+            });
+
+            $("button:eq(1)").click(function() {
+                var text = $("#box").text();
+                alert(text);
+            });
+        </script>
+    </body>
+</html>

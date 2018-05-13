@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습2</title>
+    <link rel="stylesheet" href="css/notosanskr.css" />
+    <style type="text/css">
+        button{
+            width:120px;
+            height:45px;
+            font:700 15px "Noto Sans KR", sans-serif;
+            background-color:lightgray;
+            border:none;
+        }
+        button:hover{
+            background-color:gray;
+            color:#FFF;
+        }
+        #box{
+            width:491px;
+            height:300px;
+            border:1px solid #424242;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button>PINK</button>
+        <button>SKYBLUE</button>
+        <button>AQUAMARINE</button>
+        <button>GOLD</button>
+    </p>
+    <div id="box"></div>
+    <script src="js/jquery.js"></script>
+    <script>
+        $("button").click(function() {
+            var color = $(this).text();
+            //alert(color);
+
+            $("#box").css("background-color",color);
+        });
+    </script>
+</body>
+</html>

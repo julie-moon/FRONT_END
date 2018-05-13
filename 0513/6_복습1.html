@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습1</title>
+    <link rel="stylesheet" href="css/notosanskr.css" />
+    <style type="text/css">
+        button{
+            width:40px;
+            height:40px;
+            border:1px solid lightgray;
+            background-color:#FFF;
+            font:700 16px "Noto Sans KR", sans-serif;
+        }
+        #image{
+            border:5px solid #FFF;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+    </p>
+    <img id="image" src="img/k1.jpg" alt="캐릭터" width="800" />
+    <script src="js/jquery.js"></script>
+    <script>
+        $("button").click(function() {
+            var dataNo = $(this).text();
+            // alert(dataNo);
+
+            $("#image").css("border", "5px solid #424242");
+            $("#image").attr("src","img/k"+dataNo+".jpg");
+        });
+    </script>
+</body>
+</html>
