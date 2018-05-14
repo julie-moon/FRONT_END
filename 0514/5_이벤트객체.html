@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>이벤트 객체</title>
+        <style type="text/css">
+            html{
+                cursor:crosshair;
+            }
+            #box{
+                width:50px;
+                height:50px;
+                border-radius:50px;
+                background-color:pink;
+                position:fixed;
+                left:0;
+                top:0;
+                transition:.5s ease;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+    </body>
+    <script src="js/jquery.js"></script>
+    <script>
+        /*
+            자바스크립트의 내장 객체(BOM : Browser Object Model)
+            1) document : 문서(HTML)를 의미하는 객체
+            2) window : 브라우저를 의미하는 객체
+            3) location : 주소 창을 의미하는 객체
+            4) history : 이전 페이지를 의미하는 객체
+        */
+        $(document).on("click", function(e) {
+
+            // alert("test");
+
+            // e는 이벤트 객체(변수명이므로 어떤 이름을 써도 상관없음)
+            /*
+                마우스이벤트는 좌표
+                1) clientX, clientY : 브라우저 기준
+                2) pageX, pageY : 페이지 기준
+                3) screenX, screenY : 모니터 기준
+                4) offsetX, offsetY : 요소 기준
+            */
+
+            // console.log(e);
+
+            var x = e.clientX;
+            var y = e.clientY;
+            // alert(x+" : "+y);
+
+            $("#box").css({left:x-25, top:y-25});
+
+            /*
+                키이벤트는 키코드
+            */
+
+        });
+    </script>
+</html>

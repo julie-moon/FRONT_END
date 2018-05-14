@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>setInterval</title>
+    </head>
+    <body>
+        <h1>?????</h1>
+        <script src="js/jquery.js"></script>
+        <script src="js/moment-with-locales.js"></script>
+        <script>
+            var no = 0;
+
+            setInterval(function() {
+                //alert("test");
+
+                // no++;
+                // $("h1").text(no);
+
+                var now = moment();
+                var sec = now.second();
+                var fullTime = now.format("YYYY년 MM월 YY일 h시 mm분 "+sec+"초");
+
+                sec++
+                $("h1").text(fullTime);
+
+            }, 1000);
+
+
+        </script>
+    </body>
+</html>

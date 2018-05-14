@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Date 객체</title>
+    </head>
+    <body>
+        <h1></h1>
+        <script src="js/jquery.js"></script>
+        <script>
+
+            /*
+                Math : 수학 관련
+                Date : 시간 관련(년 / 월 / 일 / 시 / 분 / 초 등)
+            */
+
+            // 현재 시간을 가지는 객체
+            var now = new Date();
+            // alert(now);
+
+            // 현재 년도
+            var year = now.getFullYear();
+            // alert(year);
+
+            // 현재 달
+            var month = now.getMonth()+1;
+            // alert(month);
+
+            // 날짜
+            var date = now.getDate();
+            // alert(date);
+
+            // 시
+            var hour = now.getHours();
+
+            // 분
+            var min = now.getMinutes();
+
+            // 초
+            var sec = now.getSeconds();
+
+            // alert(sec);
+
+            var fullTime = year + "년 " + month + "월 " + date + "일 "
+                           + hour + " : " + min + " : " + sec;
+
+            $("h1").text(fullTime);
+
+        </script>
+    </body>
+</html>

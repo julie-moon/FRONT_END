@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>jQuery 객체</title>
+    </head>
+    <body>
+        <button>눌러보세요-!</button>
+        <script src="js/jquery.js"></script>
+        <script>
+            /*
+                jQuery 함수 있음(축약해서 $로 사용)
+            */
+            // alert($);
+
+            /*
+            // btn은 순수 자바스크립트 요소 객체
+            var btn = document.getElementsByTagName("button")[0];
+            console.log(btn);
+            btn.style.color="red";
+            */
+
+            // 개발자 사이에서 jQuery 객체는 $를 붙여서 변수 선언
+            // $btn 변수를 선언하고, jQuery 함수를 호출하여 jQuery 객체를 얻어오고 그(레퍼런스)를 $btn 변수에 대입
+            var $btn = $("button");
+            // console.log($btn);
+            $btn.css("background-color","pink");
+
+            // click 메소드는 유저가 클릭할 때 보이지 않는 이벤트 리스너가 호출함. 이벤트 핸들러를 붙여줌
+            $btn.click(function() {
+                console.log(this); // 순수 자바스크립트 요소 객체
+                // console.log($(this));
+
+                var $this = $(this); // $(this)는 jQuery 객체
+                console.log($this);
+                $this.css("color", "#FFF");
+            });
+        </script>
+    </body>
+</html>

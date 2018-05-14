@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>복습</title>
+        <style type="text/css">
+            h1, h2{
+                text-align:center; 
+            }
+            body{
+                margin:0;
+            }
+            #wrap{
+                background-color:blue;
+                width:600px;
+                height:600px;
+                position:fixed;
+                left:50%;
+                top:50%;
+                margin:-245px 0 0 -300px;
+            }
+            #clock{
+                background-color:lightgray;
+                width:600px;
+                position:absolute;
+                left:0;
+                top:0;
+            }
+            #hour{
+                /*background-color:pink;*/
+                position:absolute;
+                left:50px;
+                top:50px;
+                transform-origin:50% 50%;
+                transform:rotate(0deg);
+            }
+            #min{
+                /*background-color:skyblue;*/
+                position:absolute;
+                left:50px;
+                top:50px;
+                transform-origin:50% 50%;
+                transform:rotate(0deg);
+            }
+            #sec{
+                /*background-color:#424242;*/
+                position:absolute;
+                left:50px;
+                top:50px;
+                transform-origin: 50% 50%;
+                transform:rotate(0deg);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>시계</h1>
+        <h2> </h2>
+        <div id="wrap">
+            <img id="clock" src="img/Clock-face.png" alt="시계" />
+            <img id="hour" src="img/hour_hand.png" alt="시침" />
+            <img id="min" src="img/minute_hand.png" alt="분침" />
+            <img id="sec" src="img/second_hand.png" alt="초침" />
+        </div>
+        <script src="js/jquery.js"></script>
+        <script src="js/moment-with-locales.js"></script>
+        <script>
+
+            setInterval(function() {
+
+                var now = moment();
+                var hour = now.hour();
+                var min = now.minute();
+                var sec = now.second();
+
+                sec++
+                $("h2").text(hour + " : " + min + " : " + sec);
+
+                var hourHand = 30;
+                var minHand = 6;
+                var secHand = 6;
+
+                $("#hour").css("transform", "rotate("+ (hour*hourHand) +"deg)");
+                $("#min").css("transform", "rotate("+ (min*minHand) +"deg)");
+                $("#sec").css("transform", "rotate("+ (sec*secHand) +"deg)");
+
+            }, 1000);
+
+        </script>
+    </body>
+</html>

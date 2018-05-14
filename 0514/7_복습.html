@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>복습</title>
+        <style type="text/css">
+            html{
+                width:100%;
+                height:100%;
+            }
+            body{
+                margin:0;
+                width:100%;
+                height:100%;
+                cursor:crosshair;
+                transition:.2s ease;
+            }
+            #box{
+                /*background-color:#FFF;*/
+                width:0;
+                height:0;
+                border-radius:100px;
+                box-shadow:0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+                position:fixed;
+                left:0;
+                top:0;
+                transition:.5s ease;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+        <script src="js/jquery.js"></script>
+        <script>
+
+            function getColor(){
+                var r = Math.floor(Math.random()*256);
+                var g = Math.floor(Math.random()*256);
+                var b = Math.floor(Math.random()*256);
+                return "rgb("+r+","+g+","+b+")";
+            }
+
+            function getBoxSize(){
+                return Math.floor(Math.random()*6)+5;
+            }
+
+            $("body").on("click", function(e) {
+
+                /* box 크기 랜덤하게 바꾸기 */
+                var r = getBoxSize()*10;
+
+                /* box 위치 변경하기 */
+                var x = e.clientX;
+                var y = e.clientY;
+
+                $("#box").css({width:r, height:r,
+                               left:x-(r/2), top:y-(r/2),
+                               "background-color":getColor()});
+
+                /* body 배경색 랜덤으로 바꾸기 */
+                $("body").css("background-color", getColor());
+
+            });
+
+        </script>
+    </body>
+</html>

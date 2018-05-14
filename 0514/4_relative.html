@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>position 속성</title>
+        <style type="text/css">
+            body{
+                margin:0;
+            }
+            div{
+                width:100px;
+                height:100px;
+                /*margin:auto;*/ /* relative에만 적용됨 */
+            }
+            #relative{
+                background-color:lightgray;
+                /*
+                    position:relative
+                    1) 층수 : 3층
+                    2) 공간 차지 유무 : 공간을 차지
+                    3) relative는 static에서 3층으로 띄운 것이라고 생각하면 됨
+                    4) 포지셔닝 컨텍스트가 지정됨
+                    5) 부모, 자식 형제 인식함(상대적)
+                    6) 자기 자리를 기준으로 움직임
+
+                    3층에 있는 요소들끼리 z축의 순서를 바꿀 때 z-index 속성 사용
+                */
+                position:relative;
+                z-index:3;
+            }
+            #absolute{
+                background-color:pink;
+                position:absolute;
+                left:50px;
+                top:50px;
+                z-index:2;
+            }
+            #fixed{
+                background-color:skyblue;
+                position:fixed;
+                left:100px;
+                top:100px;
+                z-index:1;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="relative"></div>
+        <div id="absolute"></div>
+        <div id="fixed"></div>
+    </body>
+</html>
