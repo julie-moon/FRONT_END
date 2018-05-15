@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>image rotate</title>
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <style type="text/css">
+            #wrap{
+                background-color:lightgray;
+                width:480px;
+                height:500px;
+                /*border:1px solid #424242;*/
+                overflow:hidden;
+                /* 브라우저를 기준으로 가운데 정렬하기 위해 */
+                position:fixed;
+                left:50%;
+                top:50%;
+                margin:-250px 0 0 -240px;
+            }
+            #imgs{
+                background-color:skyblue;
+                width:1480px;
+                height:1480px;
+                position:absolute;
+                left:-500px;
+                transition:.2s ease;
+            }
+            #imgs img{
+                position:absolute; /* 이미지들 다 겹치기 위해 position:absolute */
+                top:0;
+                left:500px;
+                transform-origin:50% 740px; /* #imgs height/2 */
+            }
+            #imgs img:nth-child(1){
+                transform:rotate(0deg);
+            }
+            #imgs img:nth-child(2){
+                transform:rotate(90deg);
+            }
+            #imgs img:nth-child(3){
+                transform:rotate(180deg);
+            }
+            #imgs img:nth-child(4){
+                transform:rotate(270deg);
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            <button id="leftBtn"><i class="fa fa-arrow-left"></i></button>
+            <button id="rightBtn"><i class="fa fa-arrow-right"></i></button>
+        </p>
+        <div id="wrap">
+            <div id="imgs">
+                <img src="img/apeach.png" alt="어피치" />
+                <img src="img/frodo.png" alt="프로도" />
+                <img src="img/neo.png" alt="네오" />
+                <img src="img/muji.png" alt="무지" />
+            </div> <!-- // #imgs -->
+        </div> <!-- // #wrap -->
+
+        <script src="js/jquery.js"></script>
+        <script>
+            var deg = 0;
+
+            $("#leftBtn").click(function() {
+                deg += 90;
+                $("#imgs").css("transform", "rotate("+deg+"deg)");
+            });
+
+            $("#rightBtn").click(function() {
+                deg -= 90;
+                $("#imgs").css("transform", "rotate("+deg+"deg)");
+            });
+        </script>
+    </body>
+</html>

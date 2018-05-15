@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 애니메이션</title>
+    <style type="text/css">
+        #loader{
+            width:472px;
+            height:472px;
+            background:url(img/preload-tindercox.png);
+            background-position:0 0;
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin:-236px 0 0 -236px;
+            box-shadow:0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            /* images animation에는 steps를 이용 */
+            /* animation:loader 1s steps(60) infinite; */
+            animation:loader 2s steps(30) infinite;
+        }
+        @keyframes loader{
+            from{background-position:0 0}
+            to{background-position:-28320px 0}
+        }
+    </style>
+</head>
+<body>
+    <div id="loader"></div>
+</body>
+</html>

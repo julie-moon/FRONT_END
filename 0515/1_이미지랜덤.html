@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>이미지 랜덤</title>
+        <style type="text/css">
+            body{
+                /* 인라인요소의 수평 가운데 정렬 */
+                text-align:center;
+            }
+            #car{
+                width:800px;
+                height:600px;
+                border:5px solid #424242;
+                margin:0 auto;
+                background:url(img/Audi.jpg);
+                /* chrome은 뒷배경 transition 가능 but, firefox는 안됨 */
+                transition:.3s ease;
+            }
+            #kakao{
+                cursor:pointer;
+                transition:.3s ease;
+                margin:10px;
+            }
+            #kakao:hover{
+                box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>이미지 랜덤</h1>
+        <img id="kakao" src="img/ico1.png" alt="" />
+        <div id="car"></div>
+        <script src="js/jquery.js"></script>
+        <script>
+            var $kakao = $("#kakao");
+            var $car = $("#car");
+            var carImgs = ["Audi.jpg", "BMW.jpg", "Land_Rover-Range_Rover.jpg", "Mercedes-Benz.jpg", "Peugeot.jpg"];
+
+            $kakao.on("click", function(){
+                // alert("test");
+
+                // 1~8까지의 랜덤한 정수 발생 후
+                var ran = Math.floor(Math.random()*8)+1;
+                // alert(ran);
+                // src 안에 들어갈 속성 값을 만들어야 함
+                var src = "img/ico"+ran+".png"
+                // src 속성 값을 변경
+                $kakao.attr("src", src);
+
+                // 0~4까지 랜덤한 정수 발생 후(배열 index에 대입하기 위해)
+                var ran2 = Math.floor(Math.random()*5);
+                // css 속성 값 변경
+                $car.css("background", "url("+"img/"+carImgs[ran2]+")");
+            });
+        </script>
+    </body>
+</html>

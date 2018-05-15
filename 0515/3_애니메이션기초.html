@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>애니메이션 기초</title>
+        <style type="text/css">
+             #box{
+                 background-color:skyblue;
+                 width:50px;
+                 height:50px;
+                 position:relative; /* position이 있어야 left값 바뀜 */
+                 /*
+                     animation-name: ; // 키프레임 이름
+                     animation-duration: ; 1s; // 시간
+                     animation-timing-function: ; // 가속도(ease / ease-in-out / linear)
+                     animation-iteration-count: ; // 횟수(무한 반복은 infinite)
+                 */
+                 /* 키프레임 이름 / 시간 / 가속도 / 횟수 / 방향 */
+                 animation: move 5s ease-in-out infinite alternate;
+             }
+             /*
+                1) keyframes를 선언(움직임을 선언)
+                2) 요소에 animation 속성으로 지정
+             */
+             @keyframes move{
+                 from{left:0}
+                 to{left:1000px}
+             }
+        </style>
+    </head>
+    <body>
+        <!--
+            transition은 한 번, animation은 여러 번 or 계속
+            transition은 움직임 하나, animation은 움직임 여러 개를 한 번에
+        -->
+        <div id="box"></div>
+    </body>
+</html>

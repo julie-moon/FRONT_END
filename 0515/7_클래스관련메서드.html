@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>클래스 관련 메소드</title>
+        <style type="text/css">
+            .box{
+                background-color:skyblue;
+                width:200px;
+                height:200px;
+                transition:.2s ease;
+            }
+            .box.circle{
+                background-color:pink;
+                border-radius:100px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            <button>눌러보세요-!</button>
+        </p>
+        <div class="box"></div>
+        <script src="js/jquery.js"></script>
+        <script>
+            var $box = $(".box");
+            $("button").on("click", function() {
+                /*
+                    클래스 관련 메소드(addClass(이름) : 기존의 클래스에 괄호 안 이름을 추가,
+                                  removeClass(이름) : 기존의 클래스에서 괄호 안 이름을 삭제,
+                                  toggleClass(이름) : 있으면 삭제 / 없으면 추가,
+                                  hasClass(이름) : 있으면 true / 없으면 false (조건문 써야함))
+                                  가 필요한 이유
+
+                    $box.attr("class", "circle"); // 작동 안됨
+                    $box.addClass("circle"); // 작동 됨
+                */
+                // $box.addClass("circle");
+
+                // 만약 circle이 있으면 삭제, 없으면 circle을 추가
+                // 우선, circle 클래스를 가지고 있는지 확인
+                var flag = $box.hasClass("circle");
+
+                if(flag) {
+                    // flag가 true일 때(circle을 가지고 있을 때)
+                    $box.removeClass("circle");
+                } else{
+                    // flag가 false일 때(circle을 가지고 있지 않을 때)
+                    $box.addClass("circle");
+                } // if ~ else end
+
+                // toggleClass : if else + removeClass + addClass 다 처리해줌
+            });
+        </script>
+    </body>
+</html>

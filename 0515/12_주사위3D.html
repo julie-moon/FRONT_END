@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>주사위3D</title>
+    <style type="text/css">
+        #wrap{
+            /*background-color:lightgray;*/
+            width:200px;
+            height:200px;
+            /* 브라우저를 기준으로 가운데 정렬하기 위해 */
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin:-100px 0 0 -100px;
+            /* #cube에 대한 perspective를 부모인 #wrap한테 줘야함 */
+            perspective:300px;
+        }
+        #cube{
+            width:200px;
+            height:200px;
+            border:1px solid #000;
+            position:absolute;
+            animation:roll 20s linear infinite;
+            /*
+                자식들이 실제로 3D 튀어나오게 하려면
+                transform-style 속성을 지정 해야함
+            */
+            transform-style:preserve-3d;
+        }
+        @keyframes roll {
+            from{transform:rotateX(0deg) rotateY(0deg)}
+            from{transform:rotateX(360deg) rotateY(360deg)}
+        }
+        .side{
+            width:200px;
+            height:200px;
+            text-align:center;
+            color:#FFF;
+            font-size:100px;
+            line-height:200px;
+            font-weight:bold;
+            opacity:.5;
+            position:absolute; /* 다 겹치기 위해 position:absolute */
+        }
+        .side:nth-child(1){
+            background-color:red;
+            transform:rotateY(0deg) translateZ(100px);
+        }
+        .side:nth-child(2){
+            background-color:orange;
+            /* 1) 글씨를 제대로 보이게 하기 위해서 글씨를 Y축으로 돌려줌 */
+            /* 2) 글씨가 있는 방향을 기준으로 옮기기 때문에 translateZ(100px) */
+            transform:rotateY(90deg) translateZ(100px);
+        }
+        .side:nth-child(3){
+            background-color:green;
+            transform:rotateY(180deg) translateZ(100px);
+        }
+        .side:nth-child(4){
+            background-color:blue;
+            transform:rotateY(270deg) translateZ(100px);
+        }
+        .side:nth-child(5){
+            background-color:navy;
+            transform:rotateX(90deg) translateZ(100px);
+        }
+        .side:nth-child(6){
+            background-color:purple;
+            transform:rotateX(270deg) translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="cube">
+            <div class="side">1</div>
+            <div class="side">2</div>
+            <div class="side">3</div>
+            <div class="side">4</div>
+            <div class="side">5</div>
+            <div class="side">6</div>
+        </div>
+    </div>
+</body>
+</html>
