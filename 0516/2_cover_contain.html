@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cover와 contain</title>
+    <style type="text/css">
+        html{
+            height:100%;
+        }
+        body{
+            /*
+                반응형 웹 사이트에 배경 넣을 때 사용하는 방법!!
+            */
+            margin:0; /* 브라우저가 가진 기본 CSS margin 값 지워줌 */
+            height:100%;
+            background:url(img/20170901_ribbonryan_Rbanner_W.gif);
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size:cover;
+        }
+        .box{
+            width:400px;
+            height:400px;
+            border:1px solid #424242;
+            float:left;
+            margin:10px;
+            background:url(img/20170901_ribbonryan_Rbanner_W.gif);
+            background-repeat:no-repeat;
+            background-position:center;
+            /*
+                과거(CSS3 이전)에는 이미지를 사용할 때
+                해당 요소와 크기와 비율이 같아야 했음
+
+                그런데 background-size가 나타나면서(CSS3)
+                100% 100%로 주면 크기와 상관없이 비율만 맞으면 됨
+
+                그러나, 만약 비율도 다르고 크기도 다를 경우 해결 방법
+                1) cover : 이미지가 요소를 커버함
+                2) contain : 이미지를 요소 안에서 전부 보여줌
+            */
+        }
+        #cover{
+            background-size:cover;
+        }
+        #contain{
+            background-size:contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="cover"></div>
+    <div class="box" id="contain"></div>
+</body>
+</html>

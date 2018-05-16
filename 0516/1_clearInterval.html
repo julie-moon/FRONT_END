@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>clearInterval</title>
+    </head>
+    <body>
+        <h1>???</h1>
+        <p>
+            <button>시작</button>
+            <button>멈춤</button>
+        </p>
+    </body>
+    <script src="js/jquery.js"></script>
+    <script>
+        var no = 0;
+        var idx = 0;
+
+        // 첫번째 버튼을 클릭했을 때
+        $("button").eq(0).click(function(){
+            // alert("test");
+
+            $(this).attr("disabled", "disabled");
+
+            // 1/1000초 마다
+            idx = setInterval(function(){
+                // no 변수의 값을 1 증가 시킨 후, h1 요쇼의 글자로 세팅
+                $("h1").text(++no);
+            },1000); // setInterval() end
+
+            alert(idx); // idx 값이 1부터 시작하지 않을 수도 있음
+
+        }); // click() end
+
+        $("button").eq(1).click(function() {
+
+            $("button:eq(0)").removeAttr("disabled");
+            clearInterval(idx);
+        })
+
+    </script>
+</html>

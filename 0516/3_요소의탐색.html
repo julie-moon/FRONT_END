@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소의 탐색</title>
+    <style type="text/css">
+        table{
+            border-collapse:collapse;
+        }
+        td{
+            padding:20px 30px;
+            font-size:30px;
+            border:1px solid #424242;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="js/jquery.js"></script>
+    <script>
+        /*
+            요소 탐색 관련 메소드
+
+            next() : 다음 형제 요소 선택
+            prev() : 이전 형제 요소 선택
+            parent() : 부모 요소 선택
+            parents("선택자") : 조상 중에 선택
+            children() : 자식 요소들 모두 선택
+        */
+        $("td").eq(1)
+               .css("background-color","pink")
+               .next()
+               .css("background-color","skyblue")
+               .prev() // 2번 td
+               .prev() // 1번 td
+               .css("background-color","lightgray")
+               .parent() // 첫 번째 tr 선택
+               .next() // 두번째 tr
+               .children() // 4,5,6번 td 선택
+               .eq(1) // 5번 td 선택
+               .css({"background-color":"purple", "color":"#FFF"})
+               .parent() // 두 번째 tr 선택
+               .next() // 세 번째 tr 선택
+               .children() // 7,8,9번 td 선택
+               .eq(2) // 9번 td 선택
+               .css({"background-color":"navy","color":"#FFF"});
+    </script>
+</body>
+</html>
