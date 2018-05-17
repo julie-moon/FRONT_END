@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: flood;
+    src: url(../fonts/flood-webfont.woff2) format("woff2"),
+    url(../fonts/flood-webfont.woff) format("woff"),
+    url(../fonts/flood-webfont.ttf) format("truetype");
+}

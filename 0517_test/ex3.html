@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>뒷배경변경</title>
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <style type="text/css">
+            html{
+                height:100%;
+            }
+            body{
+                margin:0; /* 브라우저가 가진 기본 CSS margin값 없애줌 */
+                height:100%;
+                background:url(img/c1.jpg);
+                background-repeat:no-repeat;
+                background-position:center;
+                background-size:cover;
+                transition:.5s ease;
+            }
+            #executeBtn{
+                background-color:gray;
+                color:#FFF;
+                width:100px;
+                height:100px;
+                border-radius:50px;
+                border:none;
+                font-size:50px;
+                position:fixed;
+                left:50%;
+                top:50%;
+                margin:-50px 0 0 -50px;
+                cursor:pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="executeBtn"><i class="fa fa-play"></i></button>
+    </body>
+    <script src="js/jquery.js"></script>
+    <script>
+
+        // if문 setInterval 에서 얻은 값을 else문에서도 사용해야 하기 때문에 idx를 전역변수로 선언
+        var idx = 0;
+        // 랜덤 숫자
+        var num = 0;
+        // 이전 랜덤 숫자
+        var prevNum = 0;
+        
+        // 이전 랜덤 숫자와 겹치지 않는 랜덤 숫자를 얻어올 수 있는 ran() 함수
+        function ran(prevNum) {
+            // 1~9까지 숫자를 랜덤으로 얻고, ranNum 변수로 값을 받음
+            var ranNum = Math.floor(Math.random()*9)+1;
+            // console.log("ranNum : " + ranNum);
+            
+            // 이전에 얻은 랜덤 숫자(prevNum)와 다음에 얻은 랜덤 숫자(ranNum)가 같을 때, 반복문을 돌려서
+            while(prevNum == ranNum) {
+                // 새로운 랜덤 숫자 얻고, 
+                ranNum = Math.floor(Math.random()*9)+1;
+                // console.log("바뀐 ranNum : " + ranNum);
+            } // while end
+            
+            // ranNum값 리턴함
+            return ranNum;
+        }
+        
+        $("#executeBtn").click(function(){
+            //alert("test");
+
+            var play = $("#executeBtn i").hasClass("fa fa-play");
+
+            // #executeBtn i가 fa fa-play를 가지고 있으면(true) 작동되는 구문
+            if(play) {
+
+                // fa-play 클래스를 제거하고, fa-stop 클래스 더해줌
+                $("#executeBtn i").removeClass("fa-play");
+                $("#executeBtn i").addClass("fa-stop");
+
+                // setInterval(함수, 시간) : 시간마다 함수 한 번 호출
+                idx = setInterval(function(){
+                    
+                    // prevNum 값을 대입하여 ran() 함수 호출하고, num 변수에 값을 대입 
+                    num = ran(prevNum);
+                    console.log(num);
+                    
+                    // num 변수의 값을 url에 넣어주어 랜덤 이미지를 배경으로 
+                    $("body").css({"background":"url(img/c"+num+".jpg)",
+                                   "background-repeat":"no-repeat",
+                                   "background-position":"center",
+                                   "background-size":"cover"}); 
+                    
+                    // prevNum 변수에 값을 저장해둠
+                    prevNum = num;
+                    // console.log("prevNum : " + num);
+                    
+                },1000);
+
+                // alert(idx);
+
+              // #executeBtn i가 fa fa-play를 가지고 있지 않으면(false) 작동되는 구문
+            } else {
+
+                // fa-stop 클래스를 제거하고 fa-play 클래스 더해줌
+                $("#executeBtn i").removeClass("fa-stop");
+                $("#executeBtn i").addClass("fa-play");
+
+                // setInterval() 함수를 멈추기 위해 clearInterval()
+                clearInterval(idx);
+
+            } // if ~ else end
+            
+        }); // click() end
+    </script>
+</html>

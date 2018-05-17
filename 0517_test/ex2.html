@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8"/>
+		<title>영화포스터</title>
+		<link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/notosanskr.css"/>
+		<style>
+
+			#wrap h1 {
+				margin:20px;
+				font-size:32px;
+				font-weight: 700;
+			}
+
+			#wrap {
+				width:1100px;
+				text-align: center;
+				position: relative;
+				margin:20px auto;
+				font-family: "Noto Sans KR",sans-serif;
+			}
+			
+			button {
+				padding:12px 16px;
+				border:none;
+				cursor: pointer;
+				font:500 20px 'Noto Sans KR',sans-serif;
+				background: #9E9E9E;
+				color:#fff;
+			}
+			button:hover {
+				background: #00B8D4;
+				box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+				transition: .2s ease;
+				color:#424242;
+			}
+
+			#posterBox {
+				width:1040px;
+				height:400px;
+				margin: auto;
+				position: relative;
+			}
+			
+			#posterBox>.poster {
+				width:250px;
+				height:356px;
+				position: absolute;
+				font-weight: 700;
+				top:0;
+				color:#fff;
+				box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2),
+				            0 40px 77px 0 rgba(0, 0, 0, 0.22);
+			}
+			.poster:nth-child(1) {left:0;}
+			.poster:nth-child(2) {left:260px}
+			.poster:nth-child(3) {left:520px;}
+			.poster:nth-child(4) {left:780px;}
+		</style>
+	</head>
+	<body>
+
+		<div id='wrap'>
+			<h1>영화 포스터 모음</h1>
+			<div id="posterBox">
+				<div class="poster">
+					<img src="poster/p1.jpg" align="범죄도시 포스터" width="250"/>
+				</div>
+				<div class="poster">
+					<img src="poster/p2.jpg" align="블레이드러너 2049 포스터"  width="250"/>
+				</div>
+				<div class="poster">
+					<img src="poster/p3.jpg" align="희생부활자 포스터"  width="250"/>
+				</div>
+				<div class="poster">
+					<img src="poster/p4.jpg" align="남한산성 포스터"  width="250"/>
+				</div>
+			</div>
+			<div id="btnBox">
+				<button class="btn">범죄도시</button>
+				<button class="btn">블레이드러너</button>
+				<button class="btn">희생부활자</button>
+				<button class="btn">남한산성</button>
+			</div>
+		</div>
+		<script src="js/jquery.js"></script>
+		<script>
+			$(".btn").click(function(){
+				// 누른 그 버튼의 index를 index() 메서드를 써서 얻어오고 idx 변수에 대입
+			    var idx = $(this).index();
+			    //alert(idx);
+
+				// 버튼에 맞는 포스터 slideToggle 해줌
+			    $("#posterBox .poster").eq(idx).slideToggle(500);
+			});
+		</script>
+	</body>
+</html>

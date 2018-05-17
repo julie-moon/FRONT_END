@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model S | Tesla</title>
+    <link rel="icon" href="img/favicon.ico"/>
+    <style type="text/css">
+        #carBox{
+            text-align:center;
+            /*background-color:skyblue;*/
+            width:1000px;
+            height:400px;
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin:-200px 0 0 -500px;
+        }
+        #car{
+            /*background-color:deepskyblue;*/
+            width:1000px;
+            height:235px;
+            background:url(img/car_body.png);
+            position:relative;
+            animation: move 1s linear infinite alternate;
+        }
+        @keyframes move{
+            from{bottom:0}
+            to{bottom:5px;}
+        }
+        .front{
+            left:190px;
+            bottom:5px;
+        }
+        .rear{
+            left:645px;
+            bottom:5px;
+        }
+        .wheel{
+            /*background-color:pink;*/
+            background:url(img/wheel19.png);
+            width:110px;
+            height:110px;
+            position:absolute;
+            background-size:100% 100%;
+            animation:turns 1s linear infinite;
+        }
+        @keyframes turns{
+            form{transform:rotate(0deg)}
+            to{transform:rotate(-360deg)}
+        }
+        .inch19{
+            background:url(img/icon-inch19-wheel.svg);
+        }
+        .inch21{
+            background:url(img/icon-inch21-wheel.svg);
+        }
+        .btn{
+            width:120px;
+            height:50px;
+            background-color:#FFF;
+            border:1px solid #CCCCCC;
+            margin-top:20px;
+            text-indent:50px;
+            
+            background-repeat:no-repeat;
+            background-size:90% 90%;
+            background-position:-10px;
+            background-color:#FFF;
+        }
+        .btn.on{
+            border:1px solid #3399FF;
+        }
+    </style>
+</head>
+<body>
+    <div id="carBox">
+        <h1>테슬라 S</h1>
+        <div id="car">
+            <div class="front wheel"></div>
+            <div class="rear wheel"></div>
+        </div>
+        <button class="btn inch19 on">19&prime;&prime;</button>
+        <button class="btn inch21">21&prime;&prime;</button>
+		<!-- 원래는 radio버튼이어야 합니다.(실력평가 리뷰때) -->
+    </div>
+    <script src="js/jquery.js"></script>
+    <script>
+        // .btn을 클릭했을 때,
+        $(".btn").click(function(){
+
+            // button의 .on class를 제거하고, 누른 그 버튼에 on 클래스 더해줌
+            $("button").removeClass("on");
+            $(this).addClass("on");
+
+            // 각각 inch19, inch21 클래스 가지고 있는지 얻어낸 후, 값을 inch19, inch21 변수에 담아줌
+            var inch19 = $(this).hasClass("inch19");
+            // alert(inch19);
+            var inch21 = $(this).hasClass("inch21");
+            // alert(inch21);
+
+            // inch19 클래스를 가지고 있으면, background:url(img/wheel19.png),
+            if(inch19) {
+                $(".wheel").css({"background":"url(img/wheel19.png)",
+                                 "background-size":"100% 100%"});
+
+            // inch21 클래스를 가지고 있으면, background:url(img/wheel21.png),
+            } else if(inch21) {
+                $(".wheel").css({"background":"url(img/wheel21.png)",
+                                 "background-size":"100% 100%"});
+            }
+        }); // click() end
+    </script>
+</body>
+</html>

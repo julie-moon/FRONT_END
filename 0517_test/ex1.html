@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>이름입력</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/notosanskr.css" />
+		<style>
+			
+			body {
+				margin:0;
+				font-family: "Noto Sans KR",serif;
+			}
+		
+			#wrap {
+				width:1000px;
+				margin:auto;
+			}
+			
+			#wrap>h1 {
+				font-size:48px;
+				font-weight:bold;
+				color:#525252;
+				text-align: center;
+			}
+			
+			#inputBox {
+				margin:10px;
+				text-align: center;
+			}
+			
+			#name {
+				font:30px "Noto Sans KR",serif;
+				width:200px;
+				padding:15px;
+				border:2px solid #666;
+				margin-right:10px;
+			}
+			
+			#name:focus {
+				border-color:#03A9F4;
+			}
+			
+			#inputBox button{
+				font:30px "Noto Sans KR",serif;
+				padding:17px;
+				border:none;
+				background:#03A9F4;
+				cursor: pointer;
+				color:#fff;
+				transition:.2s ease;
+			}
+			
+			#inputBox button:hover {
+				background:#424242;
+				color:#fff;
+			}
+			
+			#inputBox button:active {
+				transform:perspective(400px) translateZ(-50px);
+			}
+			
+			#nameBox {
+				width:1000px;
+				height:200px;
+				background:#80D8FF;
+				text-align: center;
+				font-size:30px;
+				line-height:200px;
+				  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+			}
+			
+			#nameBox em {
+				font-weight: 900;
+				color:#fff;
+				font-size:100px;
+				text-shadow:1px 1px #333;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<h1>이름을 알고 싶어요!</h1>
+			<div id="inputBox">
+				<label for="name" class="screen_out">이름</label>
+				<input type="text"
+				placeholder="이름 입력"
+				title="이름입력란"
+				 id="name"/>
+				<button id="inputBtn"><i class="fa fa-paint-brush"></i> 이름 입력</button>
+			</div>
+			<div id="nameBox">
+				당신의 이름은 <em>?</em>입니다.
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.js"></script>
+	<script>
+
+		var name; // getName() 함수의 리턴 값을 담아줄 name 변수 선언
+		// input에 입력된 이름을 얻기 위한 getName() 함수 선언
+		function getName() {
+		    // val() 메서드로 input에 입력된 이름 얻은 값을 리턴함
+		    return $("input").val();
+		}
+		// getName() 함수로 얻어온 이름을 #nameBox em에 보여주기 위한 showName 함수 선언
+		function showName(){
+            $("#nameBox em").text(name);
+		}
+		// input에 입력 했던 이름 사라지게 처리하는 deleteName() 함수 선언
+		function deleteName() {
+            $("input").val("");
+		}
+
+		// input 창에 커서 깜빡이게 하기 위한 focus() 메서드
+		$("#name").focus();
+
+		// 이벤트 : 유저가 하는 행동(여기서는 click)
+		// 이벤트타겟 : 이벤트리스너를 붙일 요소(여기서는 #inputBtn)
+		// 이벤트리스너 : 단 하나의 이벤트를 감지함(눈에 보이지 않음) / 이벤트핸들러(함수)를 호출함
+        // 이벤트핸들러 : 함수(여기서는 click() 괄호 안 function(){} <- 안의 내용들)
+        // #inputBtn 눌렀을 때 작동
+		$("#inputBtn").click(function(){
+		    // alert("test");
+
+			// getName() 함수의 리턴 값을 name 변수에 대입
+			name = getName();
+			// alert(name);
+
+			// 얻어온 이름을 #nameBox em에 보여주기 위한 showName() 함수 호출
+			showName();
+
+			// input에 입력한 이름 사라지게 처리하기 위한 deleteName() 함수 호출
+			deleteName();
+
+			// 이름을 입력하지 않았을 때 alert() 함수 호출하기 위한 if문
+			if(name == "" || name == " ") { // 공백이 여러 칸일 경우에도 alert() 함수를 작동하게 하려면 어떻게 해야 하나요?
+			    alert("이름을 입력해주세요~");
+                $("#nameBox em").text("?");
+			}// if end
+
+			// 버튼을 클릭했을 때, input 창에 커서가 사라지므로 다시 써줌
+            $("#name").focus();
+
+		}); // click() end
+
+        // 이벤트 : 유저가 하는 행동(여기서는 keydown)
+        // 이벤트타겟 : 이벤트리스너를 붙일 요소(여기서는 #name)
+        // 이벤트리스너 : 단 하나의 이벤트를 감지함(눈에 보이지 않음) / 이벤트핸들러(함수)를 호출함
+        // 이벤트핸들러 : 함수(여기서는 keydown() 괄호 안 function(){} <- 안의 내용들)
+		// 글자 입력 후 엔터 눌렀을 때 작동
+        $("#name").keydown(function(key) {
+
+            // keyCode가 13(엔터)일 때
+            if (key.keyCode == 13) {
+				// alert("test");
+
+                // getName() 함수의 리턴 값을 name 변수에 대입
+                name = getName();
+                // alert(name);
+
+                // 얻어온 이름을 #nameBox em에 보여주기 위한 showName() 함수 호출
+                showName();
+
+                // input에 입력한 이름 사라지게 처리하기 위한 deleteName() 함수 호출
+                deleteName();
+
+                // 이름을 입력하지 않았을 때 alert 함수 호출하기 위한 if문
+                if(name == "" || name == " ") {
+                    alert("이름을 입력해주세요~");
+                    $("#nameBox em").text("?");
+                } // if end
+
+            } // if end
+
+        }); // keydown() end
+	</script>
+</html>
+
+
+
+
+
+

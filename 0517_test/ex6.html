@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>직사각형큐브</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <style type="text/css">
+        #wrap{
+            width:1000px;
+            height:576px;
+            border:5px solid #424242;
+            /* 브라우저 기준 가운데정렬 */
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin:-293px 0 0 -505px;
+            /* #friends에 대한 perspective를 부모인 #wrap한테 줘야함 */
+            perspective:1000px;
+            /*overflow:hidden;*/
+        }
+        #friends{
+            width:1000px;
+            height:576px;
+            position:absolute;
+            /*
+                자식들이 실제로 3D 튀어나오게 하려면
+                transform-style 속성을 지정 해야함
+            */
+            transform:translateZ(-288px);
+            transition:.5s ease;
+            transform-style:preserve-3d;
+            /*border:5px solid #424242;*/
+            /*animation:roll 5s linear infinite;*/
+        }
+        #friends img{
+            width:1000px;
+            height:576px;
+            /*opacity:.5;*/
+            position:absolute;
+        }
+        img:nth-child(1){
+            transform:rotateX(0deg) translateZ(288px);
+        }
+        img:nth-child(2){
+            transform:rotateX(-90deg) translateZ(288px);
+        }
+        img:nth-child(3){
+            transform:rotateX(-180deg) translateZ(288px);
+        }
+        img:nth-child(4){
+            transform:rotateX(-270deg) translateZ(288px);
+        }
+        .btn{
+            position:absolute;
+            left:50%;
+            width:50px;
+            height:50px;
+            border-radius:25px;
+            border:none;
+            background-color:transparent;
+            font-size:30px;
+            color:#424242;
+            cursor:pointer;
+            transition:.2s ease;
+        }
+        .btn:hover{
+            background-color:gray;
+            color:#FFF;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+        .top{
+            top:10px;
+        }
+        .bottom{
+            bottom:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="friends">
+            <img src="img/b1.png" />
+            <img src="img/b7.png" />
+            <img src="img/b2.png" />
+            <img src="img/b5.png" />
+        </div>
+        <button class="btn top fa fa-arrow-up"></button>
+        <button class="btn bottom fa fa-arrow-down"></button>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script>
+        var rotate = 0;
+        $(".top").click(function(){
+//            alert("topBtn");
+            rotate += 90;
+            $("#friends").css({"transform":"translateZ(-288px) rotateX("+rotate+"deg)"});
+        });
+        $(".bottom").click(function() {
+//            alert("btmBtn");
+            rotate -= 90;
+            $("#friends").css({"transform":"translateZ(-288px) rotateX("+rotate+"deg)"});
+        });
+    </script>
+</body>
+</html>

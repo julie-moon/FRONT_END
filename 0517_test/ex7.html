@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Studio 9</title>
+        <link rel="stylesheet"
+              href="css/flood.css"/>
+        <link rel="stylesheet"
+              href="css/reset.css"/>
+        <style>
+            html {
+                width: 100%;
+                height: 100%;
+            }
+            body {
+                width: 100%;
+                height: 100%;
+            }
+            #bg {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #2F2E32;
+            }
+            #video {
+                position: absolute;
+                margin: auto;
+                top:-9999px;
+                bottom:-9999px;
+                left:-9999px;
+                right:-9999px;
+                min-width: 100%;
+                min-height: 100%;
+            }
+            #logo{
+                width:80px;
+                height:100%;
+                position:absolute;
+                left:0;
+                top:0;
+                background:url(img/navbar-bg.svg);
+                background-repeat:no-repeat;
+                background-color:#FFF;
+                z-index:1;
+            }
+            #logo a{
+                display:block;
+                width:46px;
+                height:46px;
+                margin:10px auto;
+                background:url("img/logo.svg");
+                background-repeat:no-repeat;
+                text-indent:-9999px;
+                overflow:hidden;
+            }
+            #nav{
+                /*background-color:pink;*/
+                width:320px;
+                height:320px;
+                position:absolute;
+                top:50%;
+                left:100px;
+                margin-top:-160px;
+                z-index:1;
+            }
+            #nav li a{
+                font-family:"flood", cursive;
+                font-size:70px;
+                color:#FFF;
+                text-decoration:none;
+            }
+            #nav li a:hover{
+                color:#33E50B;
+            }
+            #menuArt{
+                position:absolute;
+                top:50%;
+                left:500px;
+                margin-top:-250px;
+                z-index:1;
+                /*background-color:skyblue;*/
+                width:500px;
+                height:500px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="logo">
+            <a href="">Studio 9</a>
+        </h1>
+        <div id="nav">
+            <h2 class="screen_out">Main Service</h2>
+            <ul>
+                <li><a href="">project</a></li>
+                <li><a href="">services</a></li>
+                <li><a href="">studio</a></li>
+                <li><a href="">contact</a></li>
+            </ul>
+        </div>
+        <div id="menuArt"></div>
+        <div id="bg">
+            <video id="video" src="video/menu-bg-video.mp4" autoplay loop></video>
+        </div>
+        <script src="js/jquery.js"></script>
+        <script>
+            $("#nav li a").mouseover(function(){
+              // alert("test");
+
+                var txt = $(this).text();
+                // alert(txt);
+
+                $("#menuArt").css({"background-image":"url(img/"+txt+".svg)",
+                                   "background-repeat":"no-repeat",
+                                   "background-size":"100% 100%"});
+
+                $("#video").attr("src","");
+
+            });
+
+            $("#nav li a").mouseleave(function(){
+                // alert("mouseleave");
+                $("#menuArt").css("background","none");
+
+                $("#video").attr("src","video/menu-bg-video.mp4");
+            });
+        </script>
+    </body>
+</html>
