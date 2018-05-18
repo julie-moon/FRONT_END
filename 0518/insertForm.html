@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>영화 입력 페이지</title>
+        <!-- favicon -->
+        <link rel="icon" href="img/daum_movie.ico" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/koverwatch.css" />
+        <link rel="stylesheet" href="css/default.css" />
+        <!-- 템플릿용 CSS를 외부 CSS로 -->
+        <style>
+            #content{
+                padding:20px 0;
+            }
+            #insertBox{
+                width:500px;
+                /*background-color:#FFF;*/
+                margin:auto;
+                border:2px solid #999;
+            }
+            #insertBox h2{
+                /*background-color:skyblue;*/
+                font-size:30px;
+                text-align:center;
+                padding:30px;
+            }
+            .row{
+                /*background-color:deepskyblue;*/
+                margin:15px;
+            }
+            .row h3{
+                display:inline-block;
+                width:70px;
+                font-size:20px;
+                /*background-color:aquamarine;*/
+                text-align: right;
+                margin-right:20px;
+            }
+            #insertBox input, #insertBox select{
+                font:20px 'koverwatch', sans-serif;
+                padding:10px 10px;
+                border:2px solid #9E9E9E;
+            }
+            #insertBox input:focus,
+            #insertBox select:focus{
+                border-color:hotpink;
+                background-color:pink;
+            }
+            .box_btn .btn{
+                background-color:lightpink;
+                color:#FFF;
+                border:none;
+                display:inline-block;
+                padding:8px 15px;
+                font:18px 'koverwatch', sans-serif;
+                cursor:pointer;
+                text-decoration:none;
+                transition:.2s ease;
+                outline:none;
+            }
+            .box_btn .btn:hover{
+                background-color:hotpink;
+                box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            .box_btn{
+                margin:40px 20px 25px 20px;
+                text-align:right;
+            }
+        </style>
+    </head>
+    <body>
+        <!--
+            HTML5의 새로운 요소들 : header, footer, main, nav, article, aside, section...
+            aux (auxiliary) : 줄임말(보조의)
+        -->
+        <header id="header">
+            <div class="aux">
+                <h1 id="logo">
+                    <a href="">
+                        <i class="fa fa-film"></i>
+                        <span> MMS</span>
+                    </a>
+                </h1>
+                <nav id="gnb">
+                    <h2 class="screen_out">주요 서비스</h2>
+                    <ul>
+                        <li>
+                            <a href=""><i class="fa fa-list-alt"></i> 장르</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa fa-video-camera"></i> 영화</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> <!-- // .aux -->
+        </header> <!-- // #header -->
+        <main id="content">
+            <div class="aux">
+                <section id="insertBox">
+                    <h2>영화 입력</h2>    
+                    <form action="insertMovie.jsp" method="post">
+                        <fieldset>
+                            <legend class="screen_out">영화 입력 폼</legend>
+                            <div class="row">
+                                <h3>영화명</h3>
+                                <input type="text" id="name" name="name" title="영화명" placeholder="영화명을 입력해주세요" />
+                            </div>
+                            <div class="row">
+                                <h3>감독</h3>
+                                <input type="text" id="director" name="director" title="감독명" placeholder="감독명을 입력해주세요" />
+                            </div>
+                            <div class="row">
+                                <h3>개봉일</h3>
+                                <select id="year" name="year">
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2015">2015</option>
+                                </select>년
+                                <select id="month" name="month">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>월
+                                <select id="date" name="date">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>일
+                            </div>
+                            <div class="row">
+                                <h3>관객수</h3>
+                                <input type="text" id ="audience" name="audience" title="관객수" placeholder="관객 수를 입력해주세요" />명
+                            </div>
+                            <div class="row">
+                                <h3>장르</h3>
+                                <select id="genre" name="genre">
+                                    <option value="1">애니메이션</option>
+                                    <option value="2">멜로</option>
+                                    <option value="3">액션</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <h3>관람가</h3>
+                                <select id="rating" name="rating">
+                                    <option value="A">전체 관람가</option>
+                                    <option value="B">12세 관람가</option>
+                                    <option value="C">15세 관람가</option>
+                                    <option value="D">19세 관람가</option>
+                                </select>
+                            </div>
+                            <div class="row box_btn">
+                                <button class="btn"><i class="fa fa-floppy-o"></i> 입력</button>
+                                <button class="btn"><i class="fa fa-retweet"></i> 입력 취소</button>
+                                <a class="btn" href="movies.jsp">영화 목록으로</a>
+                            </div>
+                        </fieldset>
+                    </form>
+                </section>
+            </div> <!-- // .aux -->
+        </main> <!-- // #content -->
+        <footer id="footer">
+            <div class="aux">
+                <div id="policy">
+                    <h4 class="screen_out">정책 및 약관</h4>
+                        <ul>
+                            <li><a href="">회사소개</a></li><!--
+                            --><li><a href="">광고</a></li><!--
+                            --><li><a href="">검색등록</a></li><!--
+                            --><li><a href="">제휴제안</a></li><!--
+                            --><li><a href="">이용약관</a></li><!--
+                            --><li><a href=""><strong>개인정보이용약관</strong></a></li><!--
+                            --><li><a href="">청소년보호정책</a></li><!--
+                            --><li><a href="">고객센터</a></li>
+                        </ul>
+                    </div><!-- //policy -->
+                <address>&copy; 2017 <a href="">jbm.com</a></address>
+            </div> <!-- // .aux -->
+        </footer><!-- // #footer -->
+    </body>
+</html>
