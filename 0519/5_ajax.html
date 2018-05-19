@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ajax</title>
+    </head>
+    <body>
+        <h1>영화 배우 목록</h1>
+        <button>얻기</button>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>키</th>
+                    <th>몸무게</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">정보 없음</td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="js/jquery.js"></script>
+        <script>
+            $('button').click(function(){
+                /*
+                    ajax : 페이지 리로딩 없이 페이지의 일부를 실시간으로 갱신하는 기술
+                    
+                    $.ajax({옵션})
+                    1) url : 서버 주소
+                    2) error : 에러가 발생 했을 때 호출되는 함수
+                    3) success : 성공 시 호출 되는 콜백 함수
+                */            
+                $.ajax({
+                    url:"ajax/actors.json",
+                    error:function(){
+                        alert("에러");
+                    },
+                    success:function(json){
+                        // alert(json);
+                        // 넘어온 데이터로 each 반복
+                        $(json).each(function(){
+                            // alert(this.name);
+                            // tr 1개
+                            var $tr = $("<tr>");
+                            // td 3개
+                            var $td1 = $("<td>").text(this.name);
+                            var $td2 = $("<td>").text(this.height);
+                            var $td3 = $("<td>").text(this.weight);
+                            // tbody에 붙이기
+                            $tr.append($td1, $td2, $td3)
+                               .appendTo('tbody');
+                        }); // each() end
+                    } // url, error, success end
+                }); // ajax() end
+            }); // button click() end
+        </script>
+    </body>
+</html>

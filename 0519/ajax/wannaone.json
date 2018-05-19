@@ -1,0 +1,13 @@
+[
+    {"name":"박지훈", "height":172, "weight":60, "birthdate":"1999-05-29"},
+    {"name":"강다니엘", "height":180, "weight":67, "birthdate":"1996-12-10"},
+    {"name":"윤지성", "height":175, "weight":62, "birthdate":"1991-03-08"},
+    {"name":"하성운", "height":170, "weight":54, "birthdate":"1994-03-22"},
+    {"name":"황민현", "height":181, "weight":67, "birthdate":"1995-08-09"},
+    {"name":"옹성우", "height":179, "weight":59, "birthdate":"1995-08-25"},
+    {"name":"김재환", "height":175, "weight":61, "birthdate":"1996-05-27"},
+    {"name":"박우진", "height":176, "weight":60, "birthdate":"1999-11-02"},
+    {"name":"배진영", "height":177, "weight":61, "birthdate":"2000-05-10"},
+    {"name":"이대휘", "height":172, "weight":54, "birthdate":"2001-01-29"},
+    {"name":"라이관린", "height":183, "weight":64, "birthdate":"2001-09-23"}
+]

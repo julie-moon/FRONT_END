@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>복습</title>
+    </head>
+    <body>
+        <button>눌러보세요</button>
+        <h1>영화 목록</h1>
+        <ul>
+            <li>
+                <h2>토르</h2>
+                <a href="deleteMovies.jsp" data-name="토르" class="delete">삭제</a>
+            </li>
+            <li>
+                <h2>침묵</h2>
+                <a href="deleteMovies.jsp" data-name="침묵" class="delete">삭제</a>
+            </li>
+        </ul>
+        <script src="js/jquery.js"></script>
+        <script>
+            $('.delete').click(function(e){
+                // 그 요소의 조상 중 li 선택 후 자손들 중 h2 선택해서 글자 얻기
+                // var name = $(this).parents("li").find("h2").text(); 
+                // var name = $(this).attr('data-name');
+                var name = this.dataset.name;
+                var flag = confirm("영화 '"+name+"'을(를) 삭제하시겠습니까?");
+                if(!flag) { // 취소를 눌렀을 때
+                    e.preventDefault();
+                } // if() end
+            }); // .delete click() end
+            
+            $('button').click(function(){
+                alert("안녕하세요!");
+            }); // button click() end
+        </script>
+    </body>
+</html>

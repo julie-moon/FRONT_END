@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>복습</title>
+    </head>
+    <body>
+        <h1>워너원</h1>
+        <button>얻기</button>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>키</th>
+                    <th>몸무게</th>
+                    <th>생년월일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="4">정보 없음</td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="js/jquery.js"></script>
+        <script>
+            $('button').click(function(){
+                // alert('test');
+                $.ajax({
+                    url:"ajax/wannaone.json",
+                    error:function(){
+                        alert("에러");
+                    }, 
+                    success:function(json){
+                        $(json).each(function(){
+                            var $tr = $("<tr>");
+                            
+                            var $td1 = $("<td>").text(this.name);
+                            var $td2 = $("<td>").text(this.height);
+                            var $td3 = $("<td>").text(this.weight);
+                            var $td4 = $("<td>").text(this.birthdate);
+                            
+                            $tr.append($td1, $td2, $td3, $td4)
+                               .appendTo('tbody');
+                        }); // each() end
+                    } // url, error, success end
+                }); // ajax() end
+            }); // click() end
+        </script>
+    </body>
+</html>
