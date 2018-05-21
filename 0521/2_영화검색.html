@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>영화 검색</title>
+    </head>
+    <body>
+        <h1>영화 검색</h1>
+        <form id="form">
+            <input name="name" id="name" placeholder="영화명" />
+            <button>검색</button>
+        </form>
+        <h2>영화 목록</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>제목</th>
+                    <th>장르</th>
+                    <th>개봉일</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <script src="js/jquery.js"></script>
+        <script>
+            $("#form").submit(function(){
+                // 영화 이름 얻어오기
+                var name = $("#name").val().trim();
+                
+                $.ajax({
+                    url:"http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json",
+                    data:{
+                        key:"430156241533f1d058c603178cc3ca0e",
+                        movieNm:name
+                    }, // data : 서버로 보낼 파라미터
+                    error:function(){
+                        alert("에러-!");
+                    }, 
+                    success:function(data){
+                        /*
+                            data는 객체(속성 : movieListResult)
+                            data.movieListResult는 객체
+                            console.log(data.movieListResult); // totCnt, source, movieList 속성 3개
+                        */
+                        
+                        // 이게 배열 : data.movieListResult.movieList
+                        var movies = data.movieListResult.movieList;
+                        console.log(movies);
+                        $(movies).each(function(){
+                            var $tr = $("<tr>"); 
+                            var $td1 = $("<td>").text(this.movieNm);
+                            var $td2 = $("<td>").text(this.repGenreNm);
+                            var $td3 = $("<td>").text(this.openDt);
+
+                            $tr.append($td1, $td2, $td3)
+                               .appendTo("tbody");
+                        }); // each() end
+                    } // url, error, success end
+                }); // ajax() end
+                
+                // 페이지 이동 안함
+                return false;
+            }); // submit() end
+        </script>
+    </body>
+</html>

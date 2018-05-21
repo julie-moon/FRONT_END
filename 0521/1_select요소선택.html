@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>select 요소 선택</title>
+    </head>
+    <body>
+        <select id="year">
+            
+        </select>
+        <select id="month">
+            
+        </select>
+        <select id="date">
+            
+        </select>
+        <script src="js/jquery.js"></script>
+        <script>
+            var $year = $("#year");
+            var $month = $("#month");
+            var $date = $("#date");
+            
+            // moment 객체를 이용해서 해당 년도, 마지막 일 처리
+            
+            function createOption() {
+                for(var i=1; i<13; i++){
+                    $("<option>").text(i).appendTo("#month");
+                } // for end
+                for(var i=1; i<32; i++){
+                    $("<option>").text(i).appendTo("#date");
+                } // for end
+                for(var i=2017; i>2003; i--){
+                    $("<option>").text(i).appendTo("#year");
+                } // for end
+            } // createOption() end
+            
+            createOption();
+            
+            $year.change(test);
+            $date.change(test);
+            $month.change(test);
+            
+            function test() {
+                alert("변경했군요-!");
+            } // test() end
+        </script>
+    </body>
+</html>
