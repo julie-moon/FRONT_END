@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>박스오피스</title>
+        <style>
+            #loader{
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                background-image:url(img/loader2.gif);
+                background-repeat:no-repeat;
+                background-position:center;
+                background-color:rgba(255,255,255,.7);
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <button>버튼</button>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>등수</th>
+                    <th>영화명</th>
+                    <th>관객수</th>
+                    <th>개봉일</th>
+                    <th>기존&amp;신규</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="5">아직 없음</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="loader"></div>
+        <script src="js/jquery.js"></script>
+        <script src="js/moment-with-locales.js"></script>
+        <script>
+            // id가 loader인 div 요소 
+            var $loader = $("#loader");
+            
+            // 3자리마다 ,만들어주는 함수
+            function numberWithCommas(audiCnt) {
+                return audiCnt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            } // numberWithCommas() end
+
+            // 이벤트(유저나 브라우저의 행동) 처리
+            $("button").click(function(e){
+                // alert("test");
+                
+                // 버튼 누르자마자 로딩 이미지 보여줌
+                $loader.show();
+                
+                $.ajax({
+                    url:"http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json",
+                    data:{ // 서버로 넘길 파라미터
+                        key:"430156241533f1d058c603178cc3ca0e",
+                        targetDt:"20171112",
+                        itemPerPage:9
+                    }, 
+                    error:function(){
+                        alert("에러-!");
+                    },
+                    success:function(json){
+                       
+                        // console.log(json.boxOfficeResult.dailyBoxOfficeList);
+                        var movies = json.boxOfficeResult.dailyBoxOfficeList;
+                        console.log(movies);
+                        
+                        // 기존의 tr들 전부 비우기
+                        $("tbody").empty();
+                        
+                        // 영화 배열로 each(각각)
+                        $(movies).each(function(){
+                            var $tr = $("<tr>");
+                            var $td1 = $("<td>").text(this.rank);
+                            var $td2 = $("<td>").text(this.movieNm);
+                            var $td3 = $("<td>").text(numberWithCommas(this.audiCnt));
+                            var $td4 = $("<td>").text(moment(this.openDt).format('YYYY년 MM월 DD일'));
+                            var $td5 = $("<td>").text(this.rankOldAndNew.toLowerCase());
+                            $tr.append($td1, $td2, $td3, $td4, $td5)
+                               .appendTo('tbody');
+                        }); // each() end
+                        
+                        $loader.hide();
+                        
+                    } // url, data,error,success end
+                    
+                }); // $.ajax() end
+                
+            }); // click() end
+        </script>
+    </body>
+</html>

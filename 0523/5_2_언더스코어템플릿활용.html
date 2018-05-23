@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>언더스코어 템플릿 활용</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <th>키</th>
+            <th>몸무게</th>
+            <th>삭제</th>
+        </tr>
+    </table>
+    <script type="text/template" id="actorTmp">
+    <% $(x).each(function(){ %>
+        <tr>
+            <td><%=this.name%></td>
+            <td><%=this.height%></td>
+            <td><%=this.weight%></td>
+            <td><button>삭제</button></td>
+        </tr>
+    <% }) %>    
+    </script>
+    <script src="js/jquery.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script>
+        var actors = [
+            {"name":"김혜수", "height":171.8, "weight":55},
+            {"name":"서현진", "height":167, "weight":46},
+            {"name":"수지", "height":168, "weight":50},
+            {"name":"이종석", "height":186, "weight":68},
+            {"name":"정해인", "height":178, "weight":64}
+        ];
+        /*
+        var html = $("#actorTmp").html();
+        alert(html);
+        */
+        var tmp = _.template($("#actorTmp").html());
+        var markup = tmp({x:actors});
+        $('tbody').append(markup);
+        //$('tbody').append(tmp({actors:actors}));
+        
+        /*
+        $(actors).each(function(){
+            // console.log(this);    
+            var markup = tmp({actor:this});
+            // alert(markup);
+            $('tbody').append(markup);
+        }); // each() end
+        */
+    </script>
+</body>
+</html>

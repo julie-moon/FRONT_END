@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>underscore template</title>
+    </head>
+    <body>
+        <!--
+        <li>
+            <div class="listBox"></div>
+        </li>
+        -->
+        <script src="js/jquery.js"></script>
+        <script src="js/underscore-min.js"></script>
+        <script>
+            /*
+                자바스크립트 라이브러리 장점 
+                1) jquery : DOM 선택, 컨텐츠 변경, 이벤트 처리, 이펙트, ajax 처리
+                2) moment : 날짜, 시간 처리
+                3) underscore : 배열, 템플릿( _() )
+            */
+            /* 
+               함수 = _.template(템플릿마크업);
+            */
+            // _.template(템플릿마크업)의 리턴 값은 함수. 따라서 tmp도 함수임
+            var tmp = _.template("<h1><%=msg%></h1>");
+            // 문자열      // tmp가 함수이기 때문에 tmp() 가능함
+            var markup = tmp({msg:"????"});
+            alert(markup);
+        </script>
+    </body>
+</html>

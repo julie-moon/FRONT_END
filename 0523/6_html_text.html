@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>html / text</title>
+        <style>
+            div{
+                width:300px;
+                height:300px;
+                border:1px solid #424242;
+                margin:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <button>버튼</button>
+        <div id="html"></div>
+        <div id="text"></div>
+        <script src="js/jquery.js"></script>
+        <script>
+            $('button').click(function(){
+                var x = "<img src='img/logo.png' />";
+                $("#html").html(x);
+                $("#text").text(x);
+            }); // click() end
+        </script>
+    </body>
+</html>
