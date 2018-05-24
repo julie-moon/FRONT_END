@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>댓글 쓰기</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/notoserif.css" />
+        <style>
+            html{
+                overflow-y:scroll;
+            }
+            body{
+                font:500 16px arial, 'Noto Serif KR', serif;
+                background-color:#F6F6F6;
+            }
+            #replyBox{
+                width:1000px;
+                border:5px solid #00E676;
+                margin:20px auto;
+            }
+            #replyBox h3{
+                /*background-color:pink;*/
+                text-align:center;
+                font-size:20px;
+                color:#00E676;
+                margin:20px 0;
+                font-weight:900;
+            }
+            #formBox{
+                /*background-color:lightgray;*/
+                text-align:center;
+                margin:10px;
+            }
+            #contentsField{
+                width:780px;
+                height:80px;
+                border:1px solid #00E676;
+                resize:none;
+                vertical-align:middle;
+                font:500 16px arial, 'Noto Serif KR', serif;
+                padding:10px;
+            }
+            #writeBtn{
+                width:100px;
+                height:102px;
+                vertical-align:middle;
+                background-color:#4D525A;
+                border:none;
+                font:500 16px arial, 'Noto Serif KR', serif;
+                color:#FFF;
+                cursor:pointer;
+            }
+            #writeBtn:hover{
+                background-color:#00E676;
+                box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            }
+            .no_reply{
+                /*background-color:pink;*/
+                text-align:center;
+                height:150px;
+                line-height:150px;
+                /*display:none;*/
+            }
+            #replyListBox{
+                /*background-color:aquamarine;*/
+                width:906px;
+                margin:0 auto 20px auto;
+                border-top:1px solid #424242;
+            }
+            #replyListBox li{
+                border-bottom:1px dotted #424242;
+                position:relative;
+                padding-top:70px;
+                padding-bottom:15px;
+            }
+            .card_user{
+                /*background-color:deepskyblue;*/
+                position:absolute;
+                width:100px;
+                height:130px;
+                text-align:center;
+                left:15px;
+                top:15px;
+                color:#424242;
+                font-weight:900;
+            }
+            .card_user img{
+                width:100px;
+                height:100px;
+                border-radius:100px;
+                box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            }
+            .box_reply {
+                /* 
+                    글이 늘어나면 height가 같이 늘어나야 하기 때문에 position:relative
+                    absolute를 쓰면 height가 같이 늘어나지 않음
+                */
+                /*background:pink;*/
+                width:736px;
+                /*min-height:160px;*/
+                position:relative;
+                left:170px;
+            }
+            #replyListBox .comments{
+                background-color:#00E676;
+                width:675px;
+                min-height:80px;
+                border-radius:0 10px 10px 10px;
+                position:relative;
+                /*top:45px;*/
+                padding:10px;
+                white-space:pre-line; /* white-space 빈 공백 처리 */
+            }
+            #replyListBox .comments::before{
+                content:"";
+                position:absolute;
+                width:0;
+                height:0;
+                border-top:10px solid #00E676;
+                border-left:15px solid transparent;
+                left:-15px;
+                top:0;
+            }
+            #replyListBox .time{
+                /*background-color:antiquewhite;*/
+                position:absolute;
+                top:-25px;/*-25px*/
+                left:0;
+            }
+            #replyListBox .delete{
+                background-color:lightgray;
+                position:absolute;
+                right:15px;/*15px*/
+                top:-55px;/*-55px*/
+                width:25px;
+                height:25px;
+                border-radius:25px;
+                text-align:center;
+                line-height:25px;
+                color:#FFF;
+                cursor:pointer;
+            }
+            #replyListBox .delete:hover{
+                background-color:#00E676;
+                box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); 
+            }
+        </style>
+    </head>
+    <body>
+        <div id="replyBox">
+            <h3><i class="fa fa-comment"></i> 댓글 <span>0</span>개</h3>
+            <div id="formBox">
+                <form id="commentForm" action="" method="get">
+                    <textarea maxlength="140" id="contentsField" placeholder="새 글을 입력합니다."></textarea>
+                    <button id="writeBtn" class="btn">올리기</button>
+                </form>
+            </div><!--//#formBox-->
+            <p class="no_reply">
+                <i class="fa fa-grav"></i>
+                댓글이 아직 없습니다.
+            </p>
+            <div id="replyListBox">
+                <ul>
+                    <li>
+                        <div class="card_user">
+                            <img src="img/profile.jpg" width="100"/>
+                            <strong>테스터</strong>
+                        </div><!-- //card_user -->
+                        <div class="box_reply">
+                            <div class="comments">안녕하세요? 반갑습니다.
+                                <!--
+                                안녕하세요? 반갑습니다.
+                                안녕하세요? 반갑습니다.
+                                안녕하세요? 반갑습니다.
+                                안녕하세요? 반갑습니다.
+                                안녕하세요? 반갑습니다.
+                                -->
+                            </div>
+                            <a href="" class="btn delete">
+                                <i class="fa fa-times"></i>
+                                <span class="screen_out">삭제</span>
+                            </a>
+                            <time class="time" datetime="2017-11-10T17:10:10+09:00">2017년 10월 10일 17시 10분 10초</time>
+                        </div><!--//box_reply-->
+                    </li>
+                </ul>
+            </div>
+        </div><!--//#replyBox-->
+        <div id="loader"></div>
+    </body>
+</html>

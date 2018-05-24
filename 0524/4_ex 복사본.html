@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>박스오피스</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/notosanskr.css" />
+        <style>
+            body{
+                font-family:'Noto Sans KR', sans-serif;
+                color:#424242;
+            }
+            #header, #footer{
+                /*background-color:pink;*/
+                width:100%;
+                height:80px;
+            }
+            .aux{
+                /*background-color:lightgray;*/
+                margin:0 auto;
+                width:1000px;
+            }
+            #header{
+                border-bottom:1px solid #F12E62;
+            }
+            #header .aux{
+                position:relative;
+            }
+            #header h1{
+                /*background-color:hotpink;*/
+                width:300px;
+                height:50px;
+                position:absolute;
+                top:15px;
+                left:0;
+            }
+            #header h1 span{
+                /*background-color:lightgray;*/
+                font-weight:900;
+                font-size:28px;
+                color:#F12E62;
+                position:absolute;
+                top:11px;
+                left:60px;
+            }
+            #dateBox{
+                /*background-color:aquamarine;*/
+                width:400px;
+                position:absolute;
+                top:22px;
+                right:0;
+                text-align:right;
+            }
+            #dateBox select:focus{
+                border-color:#F12E62;
+                color:#F12E62;
+            }
+            #year, #month, #date{
+                width:55px;
+                height:35px;
+                font-family:'Noto Sans KR', sans-serif;
+                font-size:15px;
+                color:#424242;
+                text-align:center;
+            }
+            #year option, #month option, #date option{
+                text-align:center;
+            }
+            #year{
+                width:80px;
+            }
+            #content{
+                overflow:hidden;
+                padding-bottom:10px;
+                min-height:400px;
+            }
+            #content h2{
+                /*background-color:azure;*/
+                font-size:25px;
+                text-align:center;
+                padding:20px 0;
+                color:#F12E62;
+                font-weight:700;
+            }
+            #movieList li{
+                background-color:#FCE4EC;
+                width:284px;
+                height:68px;
+                margin-right:5px;
+                margin-bottom:5px;
+                padding:25px 20px;
+                float:left;
+                border:1px solid #F12E62;
+                position:relative;
+            }
+            #movieList li:nth-child(3n){
+                margin-right:0;
+            }
+            #movieList .new::before{
+                content:"new";
+                display:block;
+                width:100px;
+                height:25px;
+                background-color:#F12E62;
+                position:absolute;
+                left:-39px;
+                top:0px;
+                z-index:10;
+                text-align:center;
+                color:#FFF;
+                font-size:13px;
+                line-height:25px;
+                transform:rotate(-45deg);
+            }
+            #movieList li h3 strong{
+                background-color:#F12E62;
+                padding:0 8px;
+                font-size:20px;
+                font-weight:700;
+                color:#FFF;
+                vertical-align:middle;
+            }
+            #movieList li h3 span{
+                /*background-color:aquamarine;*/
+                display:inline-block;
+                width:245px;
+                font-size:20px;
+                font-weight:700;
+                vertical-align:middle;
+                overflow:hidden;
+                white-space:nowrap;
+                text-overflow:ellipsis;
+                margin-left:5px;
+            }
+            #movieList li time{
+                /*background-color:skyblue;*/
+                position:absolute;
+                bottom:20px;
+                left:20px;
+                color:#9E9E9E;
+                font-size:15px;
+            }
+            #movieList li em{
+                position:absolute;
+                bottom:20px;
+                right:20px;
+                font-size:18px;
+                font-weight:500;
+            }
+            #movieList li em span{
+                font-size:16px;
+            }
+            #footer{
+                border-top:1px solid #F12E62;
+                line-height:80px;
+                text-align:center;
+                color:#F12E62;
+            }
+            #loader{
+                position:fixed;
+                left:0;
+                top:0;
+                width:100%;
+                height:100%;
+                background:url(img/loader2.gif);
+                background-repeat:no-repeat;
+                background-position:center;
+                background-color:rgba(100%,100%,100%,.8);
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header">
+            <div class="aux">
+                <h1>
+                    <img src="img/logo.png" width="50"/>
+                    <span>박스오피스</span>
+                </h1>
+                <div id="dateBox">
+                    <select id="year" name="year">
+                    </select>
+                    년
+                    <select id="month" name="month">
+                    </select>
+                    월
+                    <select id="date" name="date">
+                    </select>
+                    일
+                </div>
+            </div>
+        </header>
+        <main id="content">
+            <div class="aux">
+                <h2>2017년 11월 10일 박스오피스</h2>
+                <ul id="movieList">
+                    <!--
+                    <li>
+                        <h3><strong>1</strong>
+                            <span>토르 : 라그나로크</span>
+                        </h3>
+                        <time>2017년 10월 25일</time>
+                        <em>3,817,249<span>명</span></em>
+                    </li>
+                    <li class="new">
+                        <h3><strong>2</strong>
+                            <span>미옥</span>
+                        </h3>
+                        <time>2017년 11월 9일</time>
+                        <em>53,296<span>명</span></em>
+                    </li>
+                    <li>
+                        <h3><strong>3</strong>
+                            <span>해피 데스데이</span>
+                        </h3>
+                        <time>2017년 11월 8일</time>
+                        <em>94,342<span>명</span></em>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="aux">
+                &copy; 2017 jbm.com
+            </div>
+        </footer>
+        <div id="loader"></div>
+        <script src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/moment-with-locales.js"></script>
+		<script>
+			var $year = $("#year");
+			var $month = $("#month");
+			var $date = $("#date");
+            var $selectedDay = $("#date");
+            var $targetDate;
+			
+            function createOption(){
+                // 년도 출력(2004 ~ 2017)
+                for(var i = 2017; i>2003; i--){
+                    $year.append($("<option>").text(i).attr("value", i));
+                } // for end
+                // 월 출력
+                for(var i = 1; i<13; i++) {
+                    $month.append($("<option>").text(i).attr("value", i));
+                } // for end
+                // 일 출력
+                for(var i = 1; i<32; i++) {
+                    $date.append($("<option>").text(i).attr("value", i));
+                } // for end
+            } // createOption() end
+            
+            createOption();
+            
+            function addZero(num) {
+                if(num < 10) {
+                   return '0'+num;
+                } else{
+                    return num;
+                }// if end
+            } // addZero()
+            
+            // 선택된 년, 월, 일 value값 얻기
+            function getOfficeDate() {
+                // console.log('test');
+                var selectedYear = $year.val();
+                var selectedMonth = addZero($month.val());
+                var selectedDate = addZero($selectedDay.val());
+                //alert(selectedYear + "년 " + selectedMonth + "월 " + selectedDate + "일");
+                $targetDate = selectedYear+selectedMonth+selectedDate;
+                console.log($targetDate);
+                
+                $.ajax({
+                    url:"http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json",
+                    data:{
+                        key:"430156241533f1d058c603178cc3ca0e",
+                        targetDt:$targetDate
+                    },
+                    error:function(){
+                        alert("에러 발생-!");
+                    },
+                    success:function(data){
+                        var movies = data.boxOfficeResult.dailyBoxOfficeList;
+                        console.log(movies);
+                          
+                        $(movies).each(function(){
+
+                            var $list = $("<li>");
+                            var $h3 = $("<h3>");
+                            var $strong = $("<strong>").text(this.rank);
+                            var $mName = $("<span>").text(this.movieNm);
+                            var $time = $("<time>").text(this.openDt);
+                            var $em = $("<em>").text(this.audiCnt);
+                            var $span = $("<span>명</span>");
+
+                            $h3.append($strong, $mName);
+                            $em.append($span);
+                            $list.append($h3, $time.$em).appendTo("#movieList");
+                            
+                        }); // each end
+                    } // url, data, error, success end
+                }); // ajax end
+                
+            } // getReleaseDate()
+            
+			function detectLeapYear() {
+                // console.log('test2');
+				var year = $year.val();
+				var month = $month.val();
+				var endDate = moment([year,month-1]).endOf("month").date();
+                // selectedDate = $selectedDay.val();
+                
+                // console.log(year);
+                // console.log(month);
+                // console.log(endDate);
+				// alert(endDate);
+				
+				$date.empty();
+				
+				for(var i = 1; i <= endDate; i++) {
+					$date.append($("<option>").text(i));
+				} // for() end
+                
+                getOfficeDate();
+			} // detectLeapYear()
+            
+            $year.change(detectLeapYear);
+			$month.change(detectLeapYear);
+            $selectedDay.change(getOfficeDate);
+            
+		</script>
+    </body>
+</html>
